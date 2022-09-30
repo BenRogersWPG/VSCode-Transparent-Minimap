@@ -1,0 +1,154 @@
+{
+	"name": "transparent-minimap",
+	"displayName": "Transparent Minimap",
+	"icon": "images/icon.png",
+	"description": "Allows you to select the transparency of the minimap. You can also choose the color of it, if you wish to style it based on your theme",
+	"version": "0.0.1",
+	"publisher": "BenRogersWPG",
+	"author": {
+		"name": "Ben Rogers"
+	},
+	"homepage": "https://github.com/BenRogersWPG/VSCode-Transparent-Minimap/blob/master/README.md",
+	"license": "SEE LICENSE IN LICENSE.md",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/BenRogersWPG/VSCode-Transparent-Minimap"
+	},
+	"bugs": "https://github.com/BenRogersWPG/VSCode-Transparent-Minimap/issues",
+	"sponsor": {
+		"url": "https://github.com/sponsors/BenRogersWPG"
+	},
+	"badges": [
+		{
+			"url": "https://vsmarketplacebadge.apphb.com/downloads/BenRogersWPG.vscode-transparent-minimap.svg",
+			"href": "https://marketplace.visualstudio.com/items?itemName=BenRogersWPG.vscode-transparent-minimap",
+			"description": "Marketplace downloads"
+		}
+	],
+	"engines": {
+		"vscode": "^1.55.2"
+	},
+	"categories": [
+		"Other"
+	],
+	"keywords": [
+		"Minimap",
+		"Transparent",
+		"Color",
+		"UI",
+		"Mini Map",
+		"Customizable",
+		"Settings",
+		"Theme"
+	],
+	"extensionKind": [
+		"workspace",
+		"ui"
+	],
+	"activationEvents": [
+		"onStartupFinished",
+		"TransparentMinimap.updateTransparency",
+		"TransparentMinimap.updateColor"
+	],
+	"browser": "./out/web/extension.js",
+	"main": "./out/extension",
+	"contributes": {
+		"walkthroughs": [
+			{
+				"id": "TransparentMinimapWalkthrough",
+				"title": "Transparent Minimap Walkthrough",
+				"description": "Instructions on how to change your minimap transparency and minimap color. Thanks for installing Transparent Minimap!",
+				"steps": [
+					{
+						"id": "changesMade",
+						"title": "Your Minimap Is Now Transparent 🏆",
+						"description": "Check out a code editor page and your minimap should now be transparent. If not, make sure you have your minimap enabled.",
+						"media": {
+							"image": "images/Transparent-Minimap.gif",
+							"altText": "Animation of the VS Code minimap fading as its transparency increases"
+						}
+					},
+					{
+						"id": "changeTransparency",
+						"title": "Change Minimap Transparency (Optional) 🌫️",
+						"description": "This step will open the extension settings.\nAdd the transparency you wish for the minimap. Default is fully transparent.\n[Adjust Minimap Transparency](command:TransparentMinimap.updateTransparency)",
+						"media": {
+							"image": "images/Transparent-Minimap.gif",
+							"altText": "Animation of the VS Code minimap fading as its transparency increases"
+						}
+					},
+					{
+						"id": "changeColor",
+						"title": "Change Minimap Color (Optional) 🎨",
+						"description": "This step will open the extension settings.\nChange the minimap color if you wish. Default is no color.\n[Adjust Minimap Transparency](command:TransparentMinimap.updateTransparency)",
+						"media": {
+							"image": "images/Transparent-Minimap-Color.gif",
+							"altText": "Animation of the VS Code minimap changing colors"
+						}
+					},
+					{
+						"id": "resetVSCode",
+						"title": "Restart VS Code to Apply Your Changes 🔁",
+						"description": "Close and reopen VS Code, and your changes will apply",
+						"media": {
+							"image": "images/Transparent-Minimap.gif",
+							"altText": "Animation of the VS Code minimap fading as its transparency increases"
+						}
+					}
+				]
+			}
+		],
+		"configuration": {
+			"type": "string",
+			"title": "Transparent Minimap",
+			"properties": {
+				"TransparentMinimap.transparencyLevel": {
+					"type": "string",
+					"default": "00",
+					"markdownDescription": "Transparency level of the minimap.\n\n`00` is full transparent, `88` would be half-transparent and colored, `FF` would be no transparency and full color.\n\nRemember to restart VS Code for the changes to apply",
+					"scope": "resource",
+					"pattern": "^[xX]?[0-9a-fA-F]{2}$",
+					"patternErrorMessage": "Value must be valid 2-decimal hex number (eg. `00` or `AA`)"
+				},
+				"TransparentMinimap.minimapColor": {
+					"type": "string",
+					"default": "000000",
+					"markdownDescription": "Color of the minimap.\n\nFor example, `000000` is no color, `FF0000` would be fully red, `111111` would be faint grey\n\nRemember to restart VS Code for the changes to apply",
+					"scope": "resource",
+					"pattern": "^[xX]?[0-9a-fA-F]{6}$",
+					"patternErrorMessage": "Value must be valid 6-decimal color hex number (eg. `000000` or `FFAA22`)"
+				},
+				"TransparentMinimap.enableTransparentMinimap": {
+					"type": "boolean",
+					"default": "true",
+					"markdownDescription": "Enable the extension to change the minimap to be transparent.\n\nWill be worked on in future versions.",
+					"scope": "resource"
+				}
+			}
+		}
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile && npm run package-web",
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./",
+		"lint": "eslint -c .eslintrc.js --ext .ts ./src",
+		"compile-web": "webpack --config ./src/web-extension.webpack.config.js",
+		"watch-web": "webpack --watch --config ./src/web-extension.webpack.config.js",
+		"package-web": "webpack --mode production --devtool hidden-source-map --config ./src/web-extension.webpack.config.js"
+	},
+	"devDependencies": {
+		"@types/node": "^18.7.18",
+		"@types/vscode": "^1.55.2",
+		"@typescript-eslint/eslint-plugin": "^5.37.0",
+		"@typescript-eslint/parser": "^5.37.0",
+		"eslint": "^8.23.1",
+		"path-browserify": "^1.0.1",
+		"process": "^0.11.10",
+		"ts-loader": "^9.4.0",
+		"typescript": "^4.8.3",
+		"util": "^0.12.4",
+		"vsce": "^2.11.0",
+		"webpack": "^5.74.0",
+		"webpack-cli": "^4.10.0"
+	}
+}
