@@ -2,8 +2,8 @@
 	"name": "transparent-minimap",
 	"displayName": "Transparent Minimap",
 	"icon": "images/icon.png",
-	"description": "Allows you to select the transparency of the minimap. You can also choose the color of it, if you wish to style it based on your theme",
-	"version": "0.0.1",
+	"description": "Allows you to select the transparency of the VS Code editor minimap. You can also choose the color of it, if you wish to style it based on your theme",
+	"version": "0.0.2",
 	"publisher": "BenRogersWPG",
 	"author": {
 		"name": "Ben Rogers"
@@ -20,8 +20,8 @@
 	},
 	"badges": [
 		{
-			"url": "https://vsmarketplacebadge.apphb.com/downloads/BenRogersWPG.vscode-transparent-minimap.svg",
-			"href": "https://marketplace.visualstudio.com/items?itemName=BenRogersWPG.vscode-transparent-minimap",
+			"url": "https://vsmarketplacebadge.apphb.com/downloads/BenRogersWPG.VSCode-Transparent-Minimap.svg",
+			"href": "https://marketplace.visualstudio.com/items?itemName=BenRogersWPG.transparent-minimap",
 			"description": "Marketplace downloads"
 		}
 	],
@@ -80,7 +80,7 @@
 					{
 						"id": "changeColor",
 						"title": "Change Minimap Color (Optional) 🎨",
-						"description": "This step will open the extension settings.\nChange the minimap color if you wish. Default is no color.\n[Adjust Minimap Transparency](command:TransparentMinimap.updateTransparency)",
+						"description": "This step will open the extension settings.\nChange the minimap color if you wish. Default is no color.\n[Adjust Minimap Transparency](command:TransparentMinimap.updateColor)",
 						"media": {
 							"image": "images/Transparent-Minimap-Color.gif",
 							"altText": "Animation of the VS Code minimap changing colors"

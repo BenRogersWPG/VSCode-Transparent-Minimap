@@ -14,3 +14,8 @@ vsc-extension-quickstart.md
 .eslintrc
 **/*.map
 **/*.ts
+images/Transparent-Minimap-Red.png
+images/Transparent-Minimap-Green.png
+images/Transparent-Minimap-Blue.png
+images/Transparent-Minimap-Before.png
+images/Transparent-Minimap-After.png

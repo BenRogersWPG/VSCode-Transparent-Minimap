@@ -23,6 +23,7 @@ export async function activate(context: vscode.ExtensionContext) {
 		vscode.window.showInformationMessage(`Adjust the minimap color. eg. 000000 no color, 00ff00 is full green`);
 	}));
 
+	//Get extension settings from configuration preferences
 	const transparencyLevel: string = vscode.workspace.getConfiguration('TransparentMinimap').get('transparencyLevel')!;
 	const minimapColor: string = vscode.workspace.getConfiguration('TransparentMinimap').get('minimapColor')!;
 	let prevColorConfig: vscode.WorkspaceConfiguration;
