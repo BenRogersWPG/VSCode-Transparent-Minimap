@@ -8,6 +8,7 @@ export async function activate(context: vscode.ExtensionContext) {
 
 	// Notify the user that the extension has been activated successfully:
 	console.log('Thank you for installing Transparent Minimap, the extension is now active!');
+	refreshSettings();
 
 	// Register a command to update a setting (update transparency), which is used in the extension's walkthrough:
 	context.subscriptions.push(vscode.commands.registerCommand('TransparentMinimap.updateTransparency', async () => {
@@ -23,52 +24,65 @@ export async function activate(context: vscode.ExtensionContext) {
 		vscode.window.showInformationMessage(`Adjust the minimap color. eg. 000000 no color, 00ff00 is full green`);
 	}));
 
-	//Get extension settings from configuration preferences
-	const transparencyLevel: string = vscode.workspace.getConfiguration('TransparentMinimap').get('transparencyLevel')!;
-	const minimapColor: string = vscode.workspace.getConfiguration('TransparentMinimap').get('minimapColor')!;
-	let prevColorConfig: vscode.WorkspaceConfiguration;
-	prevColorConfig = vscode.workspace.getConfiguration('workbench.colorCustomizations');
-	const configSize = Object.keys(prevColorConfig).length;
+	// Register a command to refresh the minimap settings:
+	context.subscriptions.push(vscode.commands.registerCommand('TransparentMinimap.refreshSettings', async () => {
+		refreshSettings(true);
+	}));
 
-	if (configSize > 4) {
-		//ColorCustomization setting already exists, so update "minimap.background" setting to existing extension settings
+	async function refreshSettings(manual: boolean = false) {
+		//Function to perform the minimap update without needing to restart VS Code
 
-		//first, see if the minimap setting has been set yet:
-		const existingMinimapBackground = prevColorConfig['minimap.background'];
+		//Get extension settings from configuration preferences
+		const transparencyLevel: string = vscode.workspace.getConfiguration('TransparentMinimap').get('transparencyLevel')!;
+		const minimapColor: string = vscode.workspace.getConfiguration('TransparentMinimap').get('minimapColor')!;
+		let prevColorConfig: vscode.WorkspaceConfiguration;
+		prevColorConfig = vscode.workspace.getConfiguration('workbench.colorCustomizations');
+		const configSize = Object.keys(prevColorConfig).length;
 
-		//console.log(existingMinimapBackground);
+		if (configSize > 4) {
+			//ColorCustomization setting already exists, so update "minimap.background" setting to existing extension settings
 
-		if (existingMinimapBackground === undefined) {
-			//Does not exist, so ADD "minimap.background" setting to the extension settings
-			updateMinimapTransparency("#" + minimapColor + transparencyLevel, prevColorConfig);
+			//first, see if the minimap setting has been set yet:
+			const existingMinimapBackground = prevColorConfig['minimap.background'];
 
-		}
+			//console.log(existingMinimapBackground);
 
-		else {
-			if (existingMinimapBackground === '#' + minimapColor + transparencyLevel) {
-				//Matches. No need to write setting to the extension settings
+			if (existingMinimapBackground === undefined) {
+				//Does not exist, so ADD "minimap.background" setting to the extension settings
+				updateMinimapTransparency("#" + minimapColor + transparencyLevel, prevColorConfig);
+
 			}
+
 			else {
-				//Does not match, so UPDATE "minimap.background" setting to the extension settings
-
-				if (configSize < 6) {
-					//Only has minimap, so OVERWRITE "minimap.background" setting to the extension settings
-					writeMinimapTransparency("#" + minimapColor + transparencyLevel);
+				if (existingMinimapBackground === '#' + minimapColor + transparencyLevel) {
+					//Matches. No need to write setting to the extension settings
 				}
-
 				else {
-					//Contains other entries, so UPDATE "minimap.background" setting to the extension settings
-					updateMinimapTransparency("#" + minimapColor + transparencyLevel, prevColorConfig);
+					//Does not match, so UPDATE "minimap.background" setting to the extension settings
+
+					if (configSize < 6) {
+						//Only has minimap, so OVERWRITE "minimap.background" setting to the extension settings
+						writeMinimapTransparency("#" + minimapColor + transparencyLevel);
+					}
+
+					else {
+						//Contains other entries, so UPDATE "minimap.background" setting to the extension settings
+						updateMinimapTransparency("#" + minimapColor + transparencyLevel, prevColorConfig);
+					}
 				}
 			}
 		}
-	}
-	else {
-		//Does not exist, so write ENTIRE  "workbench.colorCustomizations minimap.background" setting to the extension settings
-		writeMinimapTransparency("#" + minimapColor + transparencyLevel);
+		else {
+			//Does not exist, so write ENTIRE  "workbench.colorCustomizations minimap.background" setting to the extension settings
+			writeMinimapTransparency("#" + minimapColor + transparencyLevel);
+		}
+
+		//Display a message to the user that the settings have been successfully refreshed if manually performed:
+		if (manual) {
+			vscode.window.showInformationMessage(`Minimap appearance has been successfully refreshed`);
+		}
 	}
 }
-
 
 export async function writeMinimapTransparency(color: string) {
 

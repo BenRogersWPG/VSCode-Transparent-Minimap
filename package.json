@@ -3,7 +3,7 @@
 	"displayName": "Transparent Minimap",
 	"icon": "images/icon.png",
 	"description": "Make your VS Code minimap transparent, giving you more horizontal room in your editor for coding. You can also choose the color of your minimap if you wish to style it based on your theme",
-	"version": "0.0.3",
+	"version": "0.1.0",
 	"publisher": "BenRogersWPG",
 	"author": {
 		"name": "Ben Rogers"
@@ -48,12 +48,19 @@
 	],
 	"activationEvents": [
 		"onStartupFinished",
+		"TransparentMinimap.refreshSettings",
 		"TransparentMinimap.updateTransparency",
 		"TransparentMinimap.updateColor"
 	],
 	"browser": "./out/web/extension.js",
 	"main": "./out/extension",
 	"contributes": {
+		"commands": [
+			{
+				"command": "TransparentMinimap.refreshSettings",
+				"title": "Refresh Minimap Transparency Settings"
+			}
+		],
 		"walkthroughs": [
 			{
 				"id": "TransparentMinimapWalkthrough",
@@ -74,7 +81,7 @@
 						"title": "Change Minimap Transparency (Optional) 🌫️",
 						"description": "This step will open the extension settings.\nAdd the transparency you wish for the minimap. Default is fully transparent.\n[Adjust Minimap Transparency](command:TransparentMinimap.updateTransparency)",
 						"media": {
-							"image": "images/Transparent-Minimap.gif",
+							"image": "images/Transparent-Minimap.webp",
 							"altText": "Animation of the VS Code minimap fading as its transparency increases"
 						}
 					},
@@ -83,14 +90,14 @@
 						"title": "Change Minimap Color (Optional) 🎨",
 						"description": "This step will open the extension settings.\nChange the minimap color to match your theme if you wish. Default is no color.\n[Adjust Minimap Color](command:TransparentMinimap.updateColor)",
 						"media": {
-							"image": "images/Transparent-Minimap-Color.gif",
+							"image": "images/Transparent-Minimap-Color.avif",
 							"altText": "Animation of the VS Code minimap changing colors"
 						}
 					},
 					{
-						"id": "resetVSCode",
-						"title": "Restart VS Code to Apply Your Changes 🔁",
-						"description": "Close and reopen VS Code, and your changes will apply",
+						"id": "applyChanges",
+						"title": "Apply Your Changes 🔁",
+						"description": "You no longer need to restart VS Code to instantly see your new minimap settings. Just run the command below:\n[Refresh Minimap Transparency Settings](command:TransparentMinimap.refreshSettings)",
 						"media": {
 							"image": "images/Transparent-Minimap.gif",
 							"altText": "Animation of the VS Code minimap fading as its transparency increases"
@@ -106,7 +113,7 @@
 				"TransparentMinimap.transparencyLevel": {
 					"type": "string",
 					"default": "00",
-					"markdownDescription": "Transparency level of the minimap.\n\n`00` is full transparent, `88` would be half-transparent and colored, `FF` would be no transparency and full color.\n\nRemember to restart VS Code for the changes to apply",
+					"markdownDescription": "Transparency level of the minimap (in hexadecimal).\n\n`00` is full transparent, `88` would be half-transparent and colored, `FF` would be no transparency and full color.\n\nRemember to run the `Refresh Minimap Transparency Settings` command to apply the changes",
 					"scope": "resource",
 					"pattern": "^[xX]?[0-9a-fA-F]{2}$",
 					"patternErrorMessage": "Value must be valid 2-decimal hex number (eg. `00` or `AA`)"
@@ -114,7 +121,7 @@
 				"TransparentMinimap.minimapColor": {
 					"type": "string",
 					"default": "000000",
-					"markdownDescription": "Color of the minimap.\n\nFor example, `000000` is no color, `FF0000` would be fully red, `111111` would be faint grey\n\nRemember to restart VS Code for the changes to apply",
+					"markdownDescription": "Hex color of the minimap.\n\nFor example, `000000` is no color, `FF0000` would be fully red, `111111` would be faint grey\n\nRemember to run the `Refresh Minimap Transparency Settings` command to apply the changes",
 					"scope": "resource",
 					"pattern": "^[xX]?[0-9a-fA-F]{6}$",
 					"patternErrorMessage": "Value must be valid 6-decimal color hex number (eg. `000000` or `FFAA22`)"

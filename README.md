@@ -12,6 +12,7 @@ This extension makes your VS Code minimap transparent. You can adjust the level 
 - Easy to use and configure
 - Runs on Visual Studio Code for the Web (vscode.dev)
 - Walkthrough to help you get started using the extension
+- **NEW** Apply color changes immediately without needing to restart VS Code
 - Lots of extension settings for your own customizations
 
 ## How To Use 👇
@@ -24,7 +25,7 @@ This extension makes your VS Code minimap transparent. You can adjust the level 
 
 Transparency level / opacity of the minimap.
 `00` is full transparent, `88` would be half-transparent and colored, `FF` would be no transparency and full color.
-Remember to restart VS Code for the changes to apply
+Remember to run the `Refresh Minimap Transparency Settings` command to apply the changes
 
 ### `TransparentMinimap.minimapColor`
 
@@ -44,10 +45,11 @@ Enable the extension to change the minimap to be transparent.
 - Allow user to quickly turn on/off minimap transparency using extension setting checkbox
 - Consider removing extension walkthrough, as it works out-of-the-box
 - Examine performance analysis of code to find potential optimizations
-- Consider adding a command to prevent need to restart VS Code
 - Test oldest supported version of VS Code for compatibility
+- **[IN PROGRESS]** Convert images and GIFs to smaller size
+- Add keyboard shortcut to refresh minimap setting changes
+- Create and add social preview image to GitHub project
 - Translate the extension to other languages
-- Convert images and GIFs to smaller size
 - Test on different operating systems
 - Make a better extension icon
 - Write more tests
@@ -56,6 +58,7 @@ Enable the extension to change the minimap to be transparent.
 
 ## Completed To-dos ✔️
 
+- ~~Consider adding a command to prevent need to restart VS Code~~
 - ~~Add GIFs to demo the extension usage~~
 
 ## Requirements 📦
