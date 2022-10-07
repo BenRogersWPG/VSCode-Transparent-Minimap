@@ -1,5 +1,23 @@
 # Changelog
 
+## [0.2.0] (2022-10-06)
+
+#### Features
+* Added keyboard shortcut to refresh minimap transparency (or color) anytime using the keybinding of <kbd>Alt</kbd> + <kbd>m</kbd>
+
+#### Code Cleanup
+* Greatly reduced extension package size by converting the GIF animations to AVIFS
+
+#### Documentation
+* Streamlined the extension description and features section of the Readme
+* Added keyboard shortcut to walkthrough
+* Rewrote extension short description
+* Added more ideas for future development to the Readme
+* Added a dev reference to my other VS Code extension
+
+#### House Keeping
+* Updated a few dependencies
+
 ## [0.1.0] (2022-10-04)
 
 #### Features

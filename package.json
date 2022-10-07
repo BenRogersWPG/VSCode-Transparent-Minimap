@@ -2,8 +2,8 @@
 	"name": "transparent-minimap",
 	"displayName": "Transparent Minimap",
 	"icon": "images/icon.png",
-	"description": "Make your VS Code minimap transparent, giving you more horizontal room in your editor for coding. You can also choose the color of your minimap if you wish to style it based on your theme",
-	"version": "0.1.0",
+	"description": "Makes your VS Code minimap transparent, giving you more horizontal room for coding. You can also choose the color of your minimap to style it based on your theme",
+	"version": "0.2.0",
 	"publisher": "BenRogersWPG",
 	"author": {
 		"name": "Ben Rogers"
@@ -29,6 +29,7 @@
 		"vscode": "^1.55.2"
 	},
 	"categories": [
+		"Keymaps",
 		"Other"
 	],
 	"keywords": [
@@ -61,6 +62,12 @@
 				"title": "Refresh Minimap Transparency Settings"
 			}
 		],
+		"keybindings": [
+			{
+				"key": "alt+m",
+				"command": "TransparentMinimap.refreshSettings"
+			}
+		],
 		"walkthroughs": [
 			{
 				"id": "TransparentMinimapWalkthrough",
@@ -72,7 +79,7 @@
 						"title": "Your Minimap Is Now Transparent 🏆",
 						"description": "Check out a code editor page and your minimap should now be transparent. If not, make sure you have your minimap enabled.",
 						"media": {
-							"image": "images/Transparent-Minimap.gif",
+							"image": "images/Transparent-Minimap.avifs",
 							"altText": "Animation of the VS Code minimap fading as its transparency increases"
 						}
 					},
@@ -81,7 +88,7 @@
 						"title": "Change Minimap Transparency (Optional) 🌫️",
 						"description": "This step will open the extension settings.\nAdd the transparency you wish for the minimap. Default is fully transparent.\n[Adjust Minimap Transparency](command:TransparentMinimap.updateTransparency)",
 						"media": {
-							"image": "images/Transparent-Minimap.webp",
+							"image": "images/Transparent-Minimap.avifs",
 							"altText": "Animation of the VS Code minimap fading as its transparency increases"
 						}
 					},
@@ -90,7 +97,7 @@
 						"title": "Change Minimap Color (Optional) 🎨",
 						"description": "This step will open the extension settings.\nChange the minimap color to match your theme if you wish. Default is no color.\n[Adjust Minimap Color](command:TransparentMinimap.updateColor)",
 						"media": {
-							"image": "images/Transparent-Minimap-Color.avif",
+							"image": "images/Transparent-Minimap-Color.avifs",
 							"altText": "Animation of the VS Code minimap changing colors"
 						}
 					},
@@ -99,8 +106,17 @@
 						"title": "Apply Your Changes 🔁",
 						"description": "You no longer need to restart VS Code to instantly see your new minimap settings. Just run the command below:\n[Refresh Minimap Transparency Settings](command:TransparentMinimap.refreshSettings)",
 						"media": {
-							"image": "images/Transparent-Minimap.gif",
+							"image": "images/Transparent-Minimap.avifs",
 							"altText": "Animation of the VS Code minimap fading as its transparency increases"
+						}
+					},
+					{
+						"id": "keybindings",
+						"title": "Apply Changes Anytime Using Keyboard Shortcut ⌨️",
+						"description": "You can refresh the minimap settings anywhere using the keyboard shortcut of:\n``Alt + m``",
+						"media": {
+							"image": "images/transparent-minimap-keyboard-shortcut.avif",
+							"altText": "Keyboard shortcut for the Transparent Minimap extension which is Alt+m"
 						}
 					}
 				]
