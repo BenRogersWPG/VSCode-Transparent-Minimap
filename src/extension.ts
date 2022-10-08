@@ -32,12 +32,21 @@ export async function activate(context: vscode.ExtensionContext) {
 	async function refreshSettings(manual: boolean = false) {
 		//Function to perform the minimap update without needing to restart VS Code
 
-		//Get extension settings from configuration preferences
+		//Get extension settings and minimap settings from configuration preferences
 		const transparencyLevel: string = vscode.workspace.getConfiguration('TransparentMinimap').get('transparencyLevel')!;
 		const minimapColor: string = vscode.workspace.getConfiguration('TransparentMinimap').get('minimapColor')!;
-		let prevColorConfig: vscode.WorkspaceConfiguration;
-		prevColorConfig = vscode.workspace.getConfiguration('workbench.colorCustomizations');
+		let prevColorConfig: vscode.WorkspaceConfiguration = vscode.workspace.getConfiguration('workbench.colorCustomizations');
 		const configSize = Object.keys(prevColorConfig).length;
+		let minimapConfig: vscode.WorkspaceConfiguration = vscode.workspace.getConfiguration('editor.minimap.enabled');
+
+		//Warn user if minimap is disabled:
+		if (minimapConfig.get('editor.minimap.enabled') === false && !manual) {
+			const messageResponse = await vscode.window.showWarningMessage(`Minimap is disabled`, 'Enable Minimap');
+			if (messageResponse === "Enable Minimap") {
+				vscode.commands.executeCommand('workbench.action.openSettings', 'editor.minimap.enabled');
+				vscode.window.showInformationMessage(`Check the checkbox to enable the minimap`);
+			}
+		}
 
 		if (configSize > 4) {
 			//ColorCustomization setting already exists, so update "minimap.background" setting to existing extension settings

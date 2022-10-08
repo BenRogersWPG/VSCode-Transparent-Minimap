@@ -1,9 +1,27 @@
 # Changelog
 
-## [0.2.0] (2022-10-06)
-
+## [1.0.0] (2022-10-08)
 #### Features
-* Added keyboard shortcut to refresh minimap transparency (or color) anytime using the keybinding of <kbd>Alt</kbd> + <kbd>m</kbd>
+* Added code to detect if minimap is disabled and will prompt to enable minimap
+
+#### Documentation
+* Made minor code formatting updates
+* Updated documentation for the new keyboard shortcut that refreshes minimap to uppercase <kbd>Alt</kbd>+<kbd>M</kbd>
+* Improved the alt tags for the images included in the project. This is to assist accessibility and contextually describe the images better
+* Added more ideas for future development to the Readme
+* Built a [discussion board for the extension on GitHub](https://github.com/BenRogersWPG/VSCode-Transparent-Minimap/discussions)
+
+#### Code Cleanup
+* Improved some comments in the source code
+
+#### House Keeping
+* Tested on VS Code 1.72
+* Tested using minimap on left, added results to Readme
+* Updated a few dependencies
+
+## [0.2.0] (2022-10-06)
+#### Features
+* Added keyboard shortcut to refresh minimap transparency (or color) anytime using the keybinding of <kbd>Alt</kbd>+<kbd>M</kbd>
 
 #### Code Cleanup
 * Greatly reduced extension package size by converting the GIF animations to AVIFS
@@ -19,7 +37,6 @@
 * Updated a few dependencies
 
 ## [0.1.0] (2022-10-04)
-
 #### Features
 * Extension can now update minimap transparency instantly without needing to reset VS Code. Just run the command `Refresh Minimap Transparency Settings` from the Command Palette.
 

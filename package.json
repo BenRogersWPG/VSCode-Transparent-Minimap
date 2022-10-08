@@ -3,7 +3,7 @@
 	"displayName": "Transparent Minimap",
 	"icon": "images/icon.png",
 	"description": "Makes your VS Code minimap transparent, giving you more horizontal room for coding. You can also choose the color of your minimap to style it based on your theme",
-	"version": "0.2.0",
+	"version": "1.0.0",
 	"publisher": "BenRogersWPG",
 	"author": {
 		"name": "Ben Rogers"
@@ -80,7 +80,7 @@
 						"description": "Check out a code editor page and your minimap should now be transparent. If not, make sure you have your minimap enabled.",
 						"media": {
 							"image": "images/Transparent-Minimap.avifs",
-							"altText": "Animation of the VS Code minimap fading as its transparency increases"
+							"altText": "Animation of the VS Code minimap fading as its transparency increases, showing code behind"
 						}
 					},
 					{
@@ -89,16 +89,16 @@
 						"description": "This step will open the extension settings.\nAdd the transparency you wish for the minimap. Default is fully transparent.\n[Adjust Minimap Transparency](command:TransparentMinimap.updateTransparency)",
 						"media": {
 							"image": "images/Transparent-Minimap.avifs",
-							"altText": "Animation of the VS Code minimap fading as its transparency increases"
+							"altText": "Animation of the VS Code minimap fading as its transparency increases, showing code behind"
 						}
 					},
 					{
 						"id": "changeColor",
 						"title": "Change Minimap Color (Optional) 🎨",
-						"description": "This step will open the extension settings.\nChange the minimap color to match your theme if you wish. Default is no color.\n[Adjust Minimap Color](command:TransparentMinimap.updateColor)",
+						"description": "This step will open the extension settings.\nChange the minimap color to match your theme if you wish. Default is no color.\n\nIn order for you to theme your minimap with a custom color, the transparency level cannot be `00`. Try setting your transparency level to about `88` and play around with the values to achieve your desired color.\n[Adjust Minimap Color](command:TransparentMinimap.updateColor)",
 						"media": {
 							"image": "images/Transparent-Minimap-Color.avifs",
-							"altText": "Animation of the VS Code minimap changing colors"
+							"altText": "Animation of the VS Code minimap cycling through changing colors from blue to green then red"
 						}
 					},
 					{
@@ -107,16 +107,16 @@
 						"description": "You no longer need to restart VS Code to instantly see your new minimap settings. Just run the command below:\n[Refresh Minimap Transparency Settings](command:TransparentMinimap.refreshSettings)",
 						"media": {
 							"image": "images/Transparent-Minimap.avifs",
-							"altText": "Animation of the VS Code minimap fading as its transparency increases"
+							"altText": "Animation of the VS Code minimap fading as its transparency increases, showing code behind"
 						}
 					},
 					{
 						"id": "keybindings",
 						"title": "Apply Changes Anytime Using Keyboard Shortcut ⌨️",
-						"description": "You can refresh the minimap settings anywhere using the keyboard shortcut of:\n``Alt + m``",
+						"description": "You can refresh the minimap settings anywhere using the keyboard shortcut of:\n``Alt+M``",
 						"media": {
-							"image": "images/transparent-minimap-keyboard-shortcut.avif",
-							"altText": "Keyboard shortcut for the Transparent Minimap extension which is Alt+m"
+							"image": "images/Transparent-Minimap-Keyboard-Shortcut.avif",
+							"altText": "Keyboard shortcut for the Transparent Minimap extension which is Alt+M"
 						}
 					}
 				]
@@ -137,7 +137,7 @@
 				"TransparentMinimap.minimapColor": {
 					"type": "string",
 					"default": "000000",
-					"markdownDescription": "Hex color of the minimap.\n\nFor example, `000000` is no color, `FF0000` would be fully red, `111111` would be faint grey\n\nRemember to run the `Refresh Minimap Transparency Settings` command to apply the changes",
+					"markdownDescription": "Hex color of the minimap.\n\nFor example, `000000` is no color, `FF0000` would be fully red, `111111` would be faint grey\n\n**NOTE - Color Only Works With A Semi-Tranparent Minimap**\n\n*In order for you to theme your minimap with a custom color, the `#TransparentMinimap.transparencyLevel#` cannot be `00`. Try setting your transparency level to about `88` and play around with the values to achieve your desired color.*\n\nRemember to run the `Refresh Minimap Transparency Settings` command to apply the changes",
 					"scope": "resource",
 					"pattern": "^[xX]?[0-9a-fA-F]{6}$",
 					"patternErrorMessage": "Value must be valid 6-decimal color hex number (eg. `000000` or `FFAA22`)"
@@ -162,7 +162,7 @@
 	},
 	"devDependencies": {
 		"@types/node": "^18.8.3",
-		"@types/vscode": "^1.72.0",
+		"@types/vscode": "^1.55.2",
 		"@typescript-eslint/eslint-plugin": "^5.39.0",
 		"@typescript-eslint/parser": "^5.39.0",
 		"eslint": "^8.25.0",
