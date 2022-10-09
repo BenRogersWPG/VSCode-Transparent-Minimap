@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.0.1] (2022-10-09)
+#### Documentation
+* Built new logo for project
+* Added social preview image to repository
+* *Both new logos created from code using randomly sized divs with random colors. Let me know if you want to see the code, I can always link it here.*
+
+#### House Keeping
+* Tested extension on Linux with no issues
+
 ## [1.0.0] (2022-10-08)
 #### Features
 * Added code to detect if minimap is disabled and will prompt to enable minimap
