@@ -38,6 +38,7 @@ export async function activate(context: vscode.ExtensionContext) {
 		let prevColorConfig: vscode.WorkspaceConfiguration = vscode.workspace.getConfiguration('workbench.colorCustomizations');
 		const configSize = Object.keys(prevColorConfig).length;
 		let minimapConfig: vscode.WorkspaceConfiguration = vscode.workspace.getConfiguration('editor.minimap.enabled');
+		const enableMinimapTransparency: string = vscode.workspace.getConfiguration('TransparentMinimap').get('enableTransparentMinimap')!;
 
 		//Warn user if minimap is disabled:
 		if (minimapConfig.get('editor.minimap.enabled') === false && !manual) {
@@ -46,6 +47,12 @@ export async function activate(context: vscode.ExtensionContext) {
 				vscode.commands.executeCommand('workbench.action.openSettings', 'editor.minimap.enabled');
 				vscode.window.showInformationMessage(`Check the checkbox to enable the minimap`);
 			}
+		}
+
+		//If minimap transparency is asked to be disabled, disable it in the color configurations:
+		if (!enableMinimapTransparency) {
+			removeMinimapTransparency(manual, prevColorConfig);
+			return;
 		}
 
 		if (configSize > 4) {
@@ -136,6 +143,39 @@ export async function updateMinimapTransparency(color: string, existingColorCust
 			newColorConfiguration,
 			ConfigurationTarget.Workspace,
 		);
+}
+
+export async function removeMinimapTransparency(manual: boolean, existingColorCustomizations: vscode.WorkspaceConfiguration) {
+
+	interface WorkspaceConfigurationObject {
+		[propName: string]: string;
+	}
+	var newColorConfiguration: WorkspaceConfigurationObject = {};
+
+	Object.entries(existingColorCustomizations).forEach(([key, value], index) => {
+		//console.log(key, value, index);
+		if (key === "get" || key === "has" || key === "inspect" || key === "update" || key === "minimap.background") {
+
+		}
+		else {
+			newColorConfiguration[key] = value;
+		}
+
+	});
+
+	//Display message to user that settings have been reverted
+	if (manual) { vscode.window.showInformationMessage(`Minimap settings reverted to normal.`); }
+
+	//Update the Settings JSON:
+	return await vscode.workspace
+		.getConfiguration()
+		.update(
+			'workbench.colorCustomizations',
+			newColorConfiguration,
+			ConfigurationTarget.Workspace,
+		);
+
+
 }
 
 // Extension is deactivated

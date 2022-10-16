@@ -2,7 +2,7 @@
 
 This extension makes your VS Code minimap transparent. You can adjust the level of transparency using the extension settings and even make your minimap a different color if you wish.
 
-![Animation of the VS Code minimap fading as its transparency increases, showing code behind](images/Transparent-Minimap.avifs)
+![Animation of the VS Code minimap fading as its transparency increases, showing code behind](images/Transparent-Minimap.gif)
 
 ## Features ✨
 
@@ -11,7 +11,7 @@ This extension makes your VS Code minimap transparent. You can adjust the level 
 - Adjust minimap transparency or minimap color
 - Runs on Visual Studio Code for the Web (vscode.dev)
 - Walkthrough to help you get started using the extension
-- **NEW** Keyboard shortcut to refresh minimap settings <kbd>Alt</kbd>+<kbd>M</kbd>
+- Keyboard shortcut to refresh minimap settings <kbd>Alt</kbd>+<kbd>M</kbd>
 - Lots of extension settings for your own customizations
 
 ## How To Use 👇
@@ -31,7 +31,7 @@ Remember to run the `Refresh Minimap Transparency Settings` command to apply the
 Color of the minimap.
 For example, `000000` is no color, `FF0000` would be fully red, `111111` would be faint grey
 
-![Animation of the VS Code minimap cycling through changing colors from blue to green then red](images/Transparent-Minimap-Color.avifs)
+![Animation of the VS Code minimap cycling through changing colors from blue to green then red](images/Transparent-Minimap-Color.gif)
 
 **NOTE** *In order for you to theme your minimap with a custom color, the transparency level cannot be `00`. Try setting your transparency level to about `88` and play around with the values to achieve your desired color.*
 
@@ -43,7 +43,6 @@ Enable the extension to change the minimap to be transparent.
 
 ## Future Development Ideas and To-dos 📝
 
-- Allow user to quickly turn on/off minimap transparency using extension setting checkbox
 - Examine performance analysis of code to find potential optimizations
 - Test oldest supported version of VS Code for compatibility
 - Improve project animations and add screenshots
@@ -55,6 +54,7 @@ Enable the extension to change the minimap to be transparent.
 ## Completed To-dos ✔️
 
 - ~~Add some descriptions that *you need to select a somewhat opaque transparency in order to colorize (theme) your minimap*~~
+- ~~Allow user to quickly turn on/off minimap transparency using extension setting checkbox~~
 - ~~Consider removing extension walkthrough, as it works out-of-the-box~~
 - ~~Consider adding a command to prevent need to restart VS Code~~
 - ~~Warn user if minimap is disabled when first installing extension~~

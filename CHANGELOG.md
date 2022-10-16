@@ -1,6 +1,18 @@
 # Changelog
 
-## [1.0.1] (2022-10-09)
+## \[2.0.0] (2022-10-16)
+#### Features
+* You can now disable the minimap transparency in the extension settings by unchecking the setting `TransparentMinimap.enableTransparentMinimap`. *Please note, this feature is still experimental, so if you experience any issues, feel free to [submit a bug](https://github.com/BenRogersWPG/VSCode-Transparent-Minimap/issues)*.
+
+#### Documentation
+* Updated Changelog to properly escape title headings in the markdown
+* Added GIFs back to the Readme for better SEO and universality
+* Rewrote some descriptions in the extension settings
+
+#### House Keeping
+* Updated a few dependencies
+
+## \[1.0.1] (2022-10-09)
 #### Documentation
 * Built new logo for project
 * Added social preview image to repository
@@ -9,7 +21,7 @@
 #### House Keeping
 * Tested extension on Linux with no issues
 
-## [1.0.0] (2022-10-08)
+## \[1.0.0] (2022-10-08)
 #### Features
 * Added code to detect if minimap is disabled and will prompt to enable minimap
 
@@ -28,7 +40,7 @@
 * Tested using minimap on left, added results to Readme
 * Updated a few dependencies
 
-## [0.2.0] (2022-10-06)
+## \[0.2.0] (2022-10-06)
 #### Features
 * Added keyboard shortcut to refresh minimap transparency (or color) anytime using the keybinding of <kbd>Alt</kbd>+<kbd>M</kbd>
 
@@ -45,7 +57,7 @@
 #### House Keeping
 * Updated a few dependencies
 
-## [0.1.0] (2022-10-04)
+## \[0.1.0] (2022-10-04)
 #### Features
 * Extension can now update minimap transparency instantly without needing to reset VS Code. Just run the command `Refresh Minimap Transparency Settings` from the Command Palette.
 
@@ -61,7 +73,7 @@
 #### House Keeping
 * Updated a few dependencies
 
-## [0.0.3] (2022-10-01)
+## \[0.0.3] (2022-10-01)
 #### Documentation
 * Added more content to the extension's features on the main Readme page
 * Rewrote the extension's main description
@@ -71,7 +83,7 @@
 #### Bug Fixes
 * Updated walkthrough action button label for minimap color
 
-## [0.0.2] (2022-09-30)
+## \[0.0.2] (2022-09-30)
 #### Code Cleanup
 * Excluded unused images from project builds
 * Added some comments to main sections of the code
@@ -86,5 +98,5 @@
 #### Bug Fixes
 * Updated walkthrough action button for minimap color to go to proper settings
 
-## [0.0.1] (2022-09-30)
+## \[0.0.1] (2022-09-30)
 Initial release to VSCode marketplace
