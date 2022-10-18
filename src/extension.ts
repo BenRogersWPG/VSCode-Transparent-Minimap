@@ -10,6 +10,11 @@ export async function activate(context: vscode.ExtensionContext) {
 	console.log('Thank you for installing Transparent Minimap, the extension is now active!');
 	refreshSettings();
 
+	// Register a command to refresh the minimap settings:
+	context.subscriptions.push(vscode.commands.registerCommand('TransparentMinimap.refreshSettings', async () => {
+		refreshSettings(true);
+	}));
+
 	// Register a command to update a setting (update transparency), which is used in the extension's walkthrough:
 	context.subscriptions.push(vscode.commands.registerCommand('TransparentMinimap.updateTransparency', async () => {
 		await new Promise(resolve => setTimeout(resolve, 1000));
@@ -22,11 +27,6 @@ export async function activate(context: vscode.ExtensionContext) {
 		await new Promise(resolve => setTimeout(resolve, 1000));
 		vscode.commands.executeCommand('workbench.action.openSettings', 'TransparentMinimap.minimapColor');
 		vscode.window.showInformationMessage(`Adjust the minimap color. eg. 000000 no color, 00ff00 is full green`);
-	}));
-
-	// Register a command to refresh the minimap settings:
-	context.subscriptions.push(vscode.commands.registerCommand('TransparentMinimap.refreshSettings', async () => {
-		refreshSettings(true);
 	}));
 
 	async function refreshSettings(manual: boolean = false) {

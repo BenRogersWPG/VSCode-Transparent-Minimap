@@ -10,6 +10,9 @@
 * Replaced GIF animation for the minimap color to match that in the walkthrough
 * Removed experimental clause on the `TransparentMinimap.enableTransparentMinimap` setting
 
+#### Code Cleanup
+* Improved logical flow of source code
+
 #### House Keeping
 * Updated a few dependencies
 
