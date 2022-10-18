@@ -1,5 +1,18 @@
 # Changelog
 
+## \[2.1.0] (2022-10-18)
+#### Features
+* Disabling the minimap transparency by setting the `TransparentMinimap.enableTransparentMinimap` user setting to false will now display a button in the information message, allowing you to re-enable the transparency easily through one click
+
+#### Documentation
+* Tested and updated requirements to earliest supported version of VS Code
+* Improved settings with example values to help new users
+* Replaced GIF animation for the minimap color to match that in the walkthrough
+* Removed experimental clause on the `TransparentMinimap.enableTransparentMinimap` setting
+
+#### House Keeping
+* Updated a few dependencies
+
 ## \[2.0.0] (2022-10-16)
 #### Features
 * You can now disable the minimap transparency in the extension settings by unchecking the setting `TransparentMinimap.enableTransparentMinimap`. *Please note, this feature is still experimental, so if you experience any issues, feel free to [submit a bug](https://github.com/BenRogersWPG/VSCode-Transparent-Minimap/issues)*.

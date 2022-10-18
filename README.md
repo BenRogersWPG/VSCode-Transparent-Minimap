@@ -38,13 +38,10 @@ For example, `000000` is no color, `FF0000` would be fully red, `111111` would b
 ### `TransparentMinimap.enableTransparentMinimap`
 
 Enable the extension to change the minimap to be transparent.
-**Not currently implemented**
-*Will be worked on in future versions.*
 
 ## Future Development Ideas and To-dos 📝
 
 - Examine performance analysis of code to find potential optimizations
-- Test oldest supported version of VS Code for compatibility
 - Improve project animations and add screenshots
 - Translate the extension to other languages
 - Write more tests
@@ -60,6 +57,8 @@ Enable the extension to change the minimap to be transparent.
 - ~~Warn user if minimap is disabled when first installing extension~~
 - ~~Add keyboard shortcut to refresh minimap setting changes~~
 - ~~Switch keybinding in documentation to use uppercase <kbd>M</kbd>~~
+- ~~Add button on "minimap settings reverted" information message~~
+- ~~Test oldest supported version of VS Code for compatibility~~
 - ~~Create and add social preview image to GitHub project~~
 - ~~Create discussion board for project on GitHub~~
 - ~~Convert images and GIFs to smaller size~~

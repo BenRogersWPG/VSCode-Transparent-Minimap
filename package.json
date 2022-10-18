@@ -3,7 +3,7 @@
 	"displayName": "Transparent Minimap",
 	"icon": "images/icon.webp",
 	"description": "Makes your VS Code minimap transparent, giving you more horizontal room for coding. You can also choose the color of your minimap to style it based on your theme",
-	"version": "2.0.0",
+	"version": "2.1.0",
 	"publisher": "BenRogersWPG",
 	"author": {
 		"name": "Ben Rogers"
@@ -26,7 +26,7 @@
 		}
 	],
 	"engines": {
-		"vscode": "^1.55.2"
+		"vscode": "^1.43.2"
 	},
 	"categories": [
 		"Keymaps",
@@ -132,7 +132,12 @@
 					"markdownDescription": "Transparency level of the minimap (in hexadecimal).\n\n`00` is full transparent, `88` would be half-transparent and colored, `FF` would be no transparency and full color.\n\nRemember to run the `Refresh Minimap Transparency Settings` command to apply the changes",
 					"scope": "resource",
 					"pattern": "^[xX]?[0-9a-fA-F]{2}$",
-					"patternErrorMessage": "Value must be valid 2-decimal hex number (eg. `00` or `AA`)"
+					"patternErrorMessage": "Value must be valid 2-decimal hex number (eg. `00` or `AA`)",
+					"examples": [
+						"00",
+						"AA",
+						"FF"
+					]
 				},
 				"TransparentMinimap.minimapColor": {
 					"type": "string",
@@ -140,12 +145,17 @@
 					"markdownDescription": "Hex color of the minimap.\n\nFor example, `000000` is no color, `FF0000` would be fully red, `111111` would be faint grey\n\n**NOTE - Color Only Works With A Semi-Transparent Minimap**\n\n*In order for you to theme your minimap with a custom color, the `#TransparentMinimap.transparencyLevel#` cannot be `00`. Try setting your transparency level to about `88` and play around with the values to achieve your desired color.*\n\nRemember to run the `Refresh Minimap Transparency Settings` command to apply the changes",
 					"scope": "resource",
 					"pattern": "^[xX]?[0-9a-fA-F]{6}$",
-					"patternErrorMessage": "Value must be valid 6-decimal color hex number (eg. `000000` or `FFAA22`)"
+					"patternErrorMessage": "Value must be valid 6-decimal color hex number (eg. `000000` or `FFAA22`)",
+					"examples": [
+						"000000",
+						"FF0000",
+						"111111"
+					]
 				},
 				"TransparentMinimap.enableTransparentMinimap": {
 					"type": "boolean",
 					"default": "true",
-					"markdownDescription": "Enable the extension to change the minimap to be transparent.\n\n**EXPERIMENTAL - Still in Beta**\n\nUncheck this to disable the minimap transparency and color\n\nRemember to run the `Refresh Minimap Transparency Settings` command to apply the changes.",
+					"markdownDescription": "Enable the extension to change the minimap to be transparent.\n\nUncheck this to disable the minimap transparency and color\n\nRemember to run the `Refresh Minimap Transparency Settings` command to apply the changes.",
 					"scope": "resource"
 				}
 			}
@@ -162,9 +172,9 @@
 	},
 	"devDependencies": {
 		"@types/node": "^18.11.0",
-		"@types/vscode": "^1.55.2",
 		"@typescript-eslint/eslint-plugin": "^5.40.1",
 		"@typescript-eslint/parser": "^5.40.1",
+		"@types/vscode": "^1.43.2",
 		"eslint": "^8.25.0",
 		"path-browserify": "^1.0.1",
 		"process": "^0.11.10",
