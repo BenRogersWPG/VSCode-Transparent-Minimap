@@ -1,5 +1,16 @@
 # Changelog
 
+## \[2.1.1] (2022-10-19)
+#### Documentation
+* Reduced size of minimap color animation
+* Optimized the alt tags for the images included in the project
+
+#### Code Cleanup
+* Improved creative source files for the project
+
+#### House Keeping
+* Updated a few dependencies
+
 ## \[2.1.0] (2022-10-18)
 #### Features
 * Disabling the minimap transparency by setting the `TransparentMinimap.enableTransparentMinimap` user setting to false will now display a button in the information message, allowing you to re-enable the transparency easily through one click
