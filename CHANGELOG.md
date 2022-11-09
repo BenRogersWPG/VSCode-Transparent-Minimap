@@ -1,4 +1,12 @@
 # Changelog
+
+## \[3.0.0] (2022-11-08)
+#### Features
+* The minimap border can now also be made transparent. *Please note, this feature is still experimental, so if you experience any issues, feel free to [submit a bug](https://github.com/BenRogersWPG/VSCode-Transparent-Minimap/issues)*.
+
+### Documentation
+* Added more ideas for future development to the Readme
+
 ## \[2.1.2] (2022-11-08)
 #### House Keeping
 * Updated a few dependencies

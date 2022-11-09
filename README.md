@@ -12,6 +12,7 @@ This extension makes your VS Code minimap transparent. You can adjust the level 
 - Runs on Visual Studio Code for the Web (vscode.dev)
 - Walkthrough to help you get started using the extension
 - Keyboard shortcut to refresh minimap settings <kbd>Alt</kbd>+<kbd>M</kbd>
+- **NEW** Also allows you to make the minimap shadow border transparent
 - Lots of extension settings for your own customizations
 
 ## How To Use 👇
@@ -42,8 +43,8 @@ Enable the extension to change the minimap to be transparent.
 ## Future Development Ideas and To-dos 📝
 
 - Examine performance analysis of code to find potential optimizations
+- Allow user to color minimap shadow border or remove it entirely
 - Improve project animations and add screenshots
-- Make minimap shadow border also transparent
 - Translate the extension to other languages
 - Write more tests
 
@@ -62,6 +63,7 @@ Enable the extension to change the minimap to be transparent.
 - ~~Test oldest supported version of VS Code for compatibility~~
 - ~~Create and add social preview image to GitHub project~~
 - ~~Create discussion board for project on GitHub~~
+- ~~Make minimap shadow border also transparent~~
 - ~~Convert images and GIFs to smaller size~~
 - ~~Add GIFs to demo the extension usage~~
 - ~~Test on different operating systems~~

@@ -102,7 +102,7 @@ export async function activate(context: vscode.ExtensionContext) {
 
 export async function writeMinimapTransparency(color: string) {
 
-	let colorCustomizations = { "minimap.background": color };
+	let colorCustomizations = { "minimap.background": color, "scrollbar.shadow": color };
 
 	//Push the new settings to the Settings JSON:
 	return await vscode.workspace
@@ -134,6 +134,7 @@ export async function updateMinimapTransparency(color: string, existingColorCust
 
 	//Add the new minimap color to the list:
 	newColorConfiguration['minimap.background'] = color;
+	newColorConfiguration['scrollbar.shadow'] = color;
 
 	//Update the Settings JSON:
 	return await vscode.workspace
@@ -154,7 +155,7 @@ export async function removeMinimapTransparency(manual: boolean, existingColorCu
 
 	Object.entries(existingColorCustomizations).forEach(([key, value], index) => {
 		//console.log(key, value, index);
-		if (key === "get" || key === "has" || key === "inspect" || key === "update" || key === "minimap.background") {
+		if (key === "get" || key === "has" || key === "inspect" || key === "update" || key === "minimap.background" || key === "scrollbar.shadow") {
 
 		}
 		else {
