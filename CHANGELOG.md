@@ -1,4 +1,11 @@
 # Changelog
+## \[2.1.2] (2022-11-08)
+#### House Keeping
+* Updated a few dependencies
+* Tested on VS Code 1.73
+
+### Documentation
+* Added more ideas for future development to the Readme
 
 ## \[2.1.1] (2022-10-19)
 #### Documentation

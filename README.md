@@ -43,6 +43,7 @@ Enable the extension to change the minimap to be transparent.
 
 - Examine performance analysis of code to find potential optimizations
 - Improve project animations and add screenshots
+- Make minimap shadow border also transparent
 - Translate the extension to other languages
 - Write more tests
 
