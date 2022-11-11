@@ -1,5 +1,13 @@
 # Changelog
 
+## \[3.0.1] (2022-11-10)
+### Documentation
+* Updated GIF on project Readme to reflect the new features brought by release `3.0.0`. Now that we can remove the shadow border of the minimap sidebar, it is now reflected in the Readme. *I will update the GIF in the walkthrough in the future as well*
+* Moved some items around in the completed to-do section of the Readme for better sorting.
+
+#### House Keeping
+* Updated a few dependencies
+
 ## \[3.0.0] (2022-11-08)
 #### Features
 * The minimap border can now also be made transparent. *Please note, this feature is still experimental, so if you experience any issues, feel free to [submit a bug](https://github.com/BenRogersWPG/VSCode-Transparent-Minimap/issues)*.

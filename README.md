@@ -43,7 +43,7 @@ Enable the extension to change the minimap to be transparent.
 ## Future Development Ideas and To-dos 📝
 
 - Examine performance analysis of code to find potential optimizations
-- Allow user to color minimap shadow border or remove it entirely
+- User setting to color minimap shadow border or remove it entirely
 - Improve project animations and add screenshots
 - Translate the extension to other languages
 - Write more tests
@@ -55,15 +55,15 @@ Enable the extension to change the minimap to be transparent.
 - ~~Add some descriptions that *you need to select a somewhat opaque transparency in order to colorize (theme) your minimap*~~
 - ~~Allow user to quickly turn on/off minimap transparency using extension setting checkbox~~
 - ~~Consider removing extension walkthrough, as it works out-of-the-box~~
+- ~~Add button on "minimap settings reverted" information message~~
 - ~~Consider adding a command to prevent need to restart VS Code~~
 - ~~Warn user if minimap is disabled when first installing extension~~
 - ~~Add keyboard shortcut to refresh minimap setting changes~~
-- ~~Switch keybinding in documentation to use uppercase <kbd>M</kbd>~~
-- ~~Add button on "minimap settings reverted" information message~~
 - ~~Test oldest supported version of VS Code for compatibility~~
+- ~~Switch keybinding in documentation to use uppercase <kbd>M</kbd>~~
 - ~~Create and add social preview image to GitHub project~~
-- ~~Create discussion board for project on GitHub~~
 - ~~Make minimap shadow border also transparent~~
+- ~~Create discussion board for project on GitHub~~
 - ~~Convert images and GIFs to smaller size~~
 - ~~Add GIFs to demo the extension usage~~
 - ~~Test on different operating systems~~
