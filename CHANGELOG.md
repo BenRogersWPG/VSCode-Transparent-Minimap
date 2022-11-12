@@ -1,5 +1,11 @@
 # Changelog
 
+## \[3.0.2] (2022-11-12)
+### Documentation
+* Refined security policy for the project
+* Updated a couple creative project source files
+* Improved color descriptions for minimap settings to better reflect naming standards
+
 ## \[3.0.1] (2022-11-10)
 ### Documentation
 * Updated GIF on project Readme to reflect the new features brought by release `3.0.0`. Now that we can remove the shadow border of the minimap sidebar, it is now reflected in the Readme. *I will update the GIF in the walkthrough in the future as well*

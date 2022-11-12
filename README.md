@@ -30,7 +30,7 @@ Remember to run the `Refresh Minimap Transparency Settings` command to apply the
 ### `TransparentMinimap.minimapColor`
 
 Color of the minimap.
-For example, `000000` is no color, `FF0000` would be fully red, `111111` would be faint grey
+For example, `000000` is no color, `FF0000` would be fully red, `111111` would be dark grey
 
 ![Animation of the transparent VS Code minimap cycling through changing colors from blue to green then red](images/Transparent-Minimap-Color.gif)
 

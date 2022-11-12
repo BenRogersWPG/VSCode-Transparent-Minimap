@@ -3,7 +3,7 @@
 	"displayName": "Transparent Minimap",
 	"icon": "images/icon.webp",
 	"description": "Makes your VS Code minimap transparent, giving you more horizontal room for coding. You can also choose the color of your minimap to style it based on your theme",
-	"version": "3.0.1",
+	"version": "3.0.2",
 	"publisher": "BenRogersWPG",
 	"author": {
 		"name": "Ben Rogers"
@@ -142,7 +142,7 @@
 				"TransparentMinimap.minimapColor": {
 					"type": "string",
 					"default": "000000",
-					"markdownDescription": "Hex color of the minimap.\n\nFor example, `000000` is no color, `FF0000` would be fully red, `111111` would be faint grey\n\n**NOTE - Color Only Works With A Semi-Transparent Minimap**\n\n*In order for you to theme your minimap with a custom color, the `#TransparentMinimap.transparencyLevel#` cannot be `00`. Try setting your transparency level to about `88` and play around with the values to achieve your desired color.*\n\nRemember to run the `Refresh Minimap Transparency Settings` command to apply the changes",
+					"markdownDescription": "Hex color of the minimap.\n\nFor example, `000000` is no color, `FF0000` would be fully red, `111111` would be dark grey\n\n**NOTE - Color Only Works With A Semi-Transparent Minimap**\n\n*In order for you to theme your minimap with a custom color, the `#TransparentMinimap.transparencyLevel#` cannot be `00`. Try setting your transparency level to about `88` and play around with the values to achieve your desired color.*\n\nRemember to run the `Refresh Minimap Transparency Settings` command to apply the changes",
 					"scope": "resource",
 					"pattern": "^[xX]?[0-9a-fA-F]{6}$",
 					"patternErrorMessage": "Value must be valid 6-decimal color hex number (eg. `000000` or `FFAA22`)",
