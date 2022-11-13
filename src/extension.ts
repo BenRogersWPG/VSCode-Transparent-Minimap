@@ -52,6 +52,16 @@ export async function activate(context: vscode.ExtensionContext) {
 		//If minimap transparency is asked to be disabled, disable it in the color configurations:
 		if (!enableMinimapTransparency) {
 			removeMinimapTransparency(manual, prevColorConfig);
+
+			//Display message to user that settings have been reverted
+			if (manual) {
+				const messageResponse = await vscode.window.showInformationMessage(`Minimap settings reverted to normal`, 'Enable Minimap Transparency');
+				if (messageResponse === "Enable Minimap Transparency") {
+					vscode.commands.executeCommand('workbench.action.openSettings', 'TransparentMinimap.enableTransparentMinimap');
+					vscode.window.showInformationMessage(`Check the checkbox to enable the minimap transparency`);
+				}
+			}
+
 			return;
 		}
 
@@ -163,15 +173,6 @@ export async function removeMinimapTransparency(manual: boolean, existingColorCu
 		}
 
 	});
-
-	//Display message to user that settings have been reverted
-	if (manual) {
-		const messageResponse = await vscode.window.showInformationMessage(`Minimap settings reverted to normal`, 'Enable Minimap Transparency');
-		if (messageResponse === "Enable Minimap Transparency") {
-			vscode.commands.executeCommand('workbench.action.openSettings', 'TransparentMinimap.enableTransparentMinimap');
-			vscode.window.showInformationMessage(`Check the checkbox to enable the minimap transparency`);
-		}
-	}
 
 	//Update the Settings JSON:
 	return await vscode.workspace

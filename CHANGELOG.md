@@ -1,5 +1,9 @@
 # Changelog
 
+## \[3.0.3] (2022-11-13)
+#### Bug Fixes
+* Improved the code that removes the transparent minimap. On some occurrences, the minimap needed to be refreshed twice for it to remove.
+
 ## \[3.0.2] (2022-11-12)
 ### Documentation
 * Refined security policy for the project
