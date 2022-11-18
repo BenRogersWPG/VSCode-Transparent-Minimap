@@ -3,7 +3,7 @@
 	"displayName": "Transparent Minimap",
 	"icon": "images/icon.webp",
 	"description": "Makes your VS Code minimap transparent, giving you more horizontal room for coding. You can also choose the color of your minimap to style it based on your theme",
-	"version": "3.0.3",
+	"version": "3.0.4",
 	"publisher": "BenRogersWPG",
 	"author": {
 		"name": "Ben Rogers"
@@ -172,9 +172,9 @@
 	},
 	"devDependencies": {
 		"@types/node": "^18.11.9",
+		"@types/vscode": "^1.43.2",
 		"@typescript-eslint/eslint-plugin": "^5.43.0",
 		"@typescript-eslint/parser": "^5.43.0",
-		"@types/vscode": "^1.73.1",
 		"eslint": "^8.27.0",
 		"path-browserify": "^1.0.1",
 		"process": "^0.11.10",
