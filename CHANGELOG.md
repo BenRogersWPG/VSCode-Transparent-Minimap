@@ -1,5 +1,12 @@
 # Changelog
 
+## \[3.0.5] (2022-12-01)
+### House Keeping
+* Updated a few dependencies
+
+### Code Cleanup
+* Made minor code formatting updates
+
 ## \[3.0.4] (2022-11-17)
 ### Documentation
 * Updated AVIF animation on the walkthrough to reflect the new features brought by release `3.0.0`. Now that we can remove the shadow border of the minimap sidebar, it is now reflected in the walkthrough for new users

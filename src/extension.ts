@@ -183,7 +183,6 @@ export async function removeMinimapTransparency(manual: boolean, existingColorCu
 			ConfigurationTarget.Workspace,
 		);
 
-
 }
 
 // Extension is deactivated
