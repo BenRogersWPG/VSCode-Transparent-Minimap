@@ -1,5 +1,13 @@
 # Changelog
 
+## \[3.0.6] (2022-12-08)
+### House Keeping
+* Updated a few dependencies
+* Tested on VS Code 1.74
+
+### Documentation
+* Rewrote some content on the Readme to differ from my other extension, as I was using the same content for a bit of it
+
 ## \[3.0.5] (2022-12-01)
 ### House Keeping
 * Updated a few dependencies

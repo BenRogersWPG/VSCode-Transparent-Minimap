@@ -17,7 +17,7 @@ This extension makes your VS Code minimap transparent. You can adjust the level 
 
 ## How To Use 👇
 
-*This extension comes packaged with a walkthrough. Use it to learn how to use the extension. (run `Get Started: Open Walkthrough` from the Command Palette)*
+* I have coded a walkthrough for this extension. It will display when you first install the extension, and will walk you through a quick initial setup to get your minimap as you like it. (access it anytime by running `Get Started: Open Walkthrough` from the Command Palette)*
 
 ## Extension Settings ⚙️
 
@@ -40,15 +40,15 @@ For example, `000000` is no color, `FF0000` would be fully red, `111111` would b
 
 Enable the extension to change the minimap to be transparent.
 
-## Future Development Ideas and To-dos 📝
+## Future To-dos and Development Ideas 📝
 
-- Examine performance analysis of code to find potential optimizations
-- User setting to color minimap shadow border or remove it entirely
+- Analyze code performance to find potential refactoring or optimization opportunities
+- Introduce localization and/or translation to add extension in more languages
+- Add a user setting to color minimap shadow border or remove it entirely
 - Improve project animations and add screenshots
-- Translate the extension to other languages
 - Write more tests
 
-> ➕ Have a feature you'd like me to implement? [Submit a feature request on the Repo's Issues page](https://github.com/BenRogersWPG/VSCode-Transparent-Minimap/issues)!
+> ➕ Have a suggestion for a feature you'd like me to improve? [Submit a feature request on the Repo's Issues page](https://github.com/BenRogersWPG/VSCode-Transparent-Minimap/issues)!
 
 ## Completed To-dos ✔️
 
@@ -72,7 +72,7 @@ Enable the extension to change the minimap to be transparent.
 
 ## Requirements 📦
 
-- Visual Studio Code or Visual Studio Code for the Web running on any operating system
+- Visual Studio Code / Visual Studio Code for the Web running on any operating system
 
 ## Known Issues 🐛
 
@@ -80,9 +80,9 @@ Enable the extension to change the minimap to be transparent.
 
 ## Sponsor This Project ❤️
 
-I spend a lot of time improving and maintaining this extension. If you'd like to sponsor this project, please visit [my GitHub Sponsor page](https://github.com/sponsors/BenRogersWPG/) to learn more.
+I spend a lot of time maintaining and enhancing this extension. If you'd like to help me out with this project, please visit [my GitHub Sponsor page](https://github.com/sponsors/BenRogersWPG/) to learn more.
 
-*One of the perks of being a sponsor is that you will even show up on this very README page!*
+*One of the reward levels of being a sponsor is that your name will even show up on this very README page!*
 
 ## Release Notes 🆕
 
