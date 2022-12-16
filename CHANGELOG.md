@@ -1,5 +1,16 @@
 # Changelog
 
+## \[3.0.7] (2022-12-15)
+### Documentation
+* Updated extension to have a dark theme header on the Microsoft Visual Studio Marketplace
+
+### House Keeping
+* Updated a few dependencies
+
+### Code Cleanup
+* Ported to new vsce library
+* Rebuilt package-lock.json
+
 ## \[3.0.6] (2022-12-08)
 ### House Keeping
 * Updated a few dependencies
