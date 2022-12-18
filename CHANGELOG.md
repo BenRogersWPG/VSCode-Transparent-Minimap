@@ -1,5 +1,13 @@
 # Changelog
 
+## \[3.0.8] (2022-12-18)
+### Documentation
+* Updated extension badges for the Microsoft Visual Studio Marketplace
+* Rewrote some of the features of the extension on the main Readme
+
+### House Keeping
+* Updated a few dependencies
+
 ## \[3.0.7] (2022-12-15)
 ### Documentation
 * Updated extension to have a dark theme header on the Microsoft Visual Studio Marketplace
