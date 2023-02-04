@@ -1,5 +1,16 @@
 # Changelog
 
+## \[3.0.9] (2023-02-04)
+### Features
+* Organized all extension settings into subcategories for easier organization
+
+### Documentation
+* Added more ideas for future development to the Readme
+
+### House Keeping
+* Tested on VS Code 1.75
+* Updated a few dependencies
+
 ## \[3.0.8] (2022-12-18)
 ### Documentation
 * Updated extension badges for the Microsoft Visual Studio Marketplace

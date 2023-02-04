@@ -45,6 +45,7 @@ Enable the extension to change the minimap to be transparent.
 - Analyze code performance to find potential refactoring or optimization opportunities
 - Introduce localization and/or translation to add extension in more languages
 - Add a user setting to color minimap shadow border or remove it entirely
+- Update extension logo to look better on light themes
 - Improve project animations and add screenshots
 - Write more tests
 
@@ -66,6 +67,7 @@ Enable the extension to change the minimap to be transparent.
 - ~~Create discussion board for project on GitHub~~
 - ~~Convert images and GIFs to smaller size~~
 - ~~Add GIFs to demo the extension usage~~
+- ~~Add subheadings to extension settings~~
 - ~~Test on different operating systems~~
 - ~~Make a better extension icon~~
 - ~~Test having minimap on left~~
