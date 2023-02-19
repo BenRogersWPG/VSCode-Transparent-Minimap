@@ -1,4 +1,23 @@
 # Changelog
+## \[3.1.1] (2023-02-19)
+### Features
+* Added logic to warn users if they manually set minimap color, but leave transparency level to fully transparent. If this occurs, the color will never apply.
+* New button will invite user to update the transparency level so they can see their nice custom color.
+
+### Code Cleanup
+* Performed some refactoring to the source code
+* Added a few to-dos to the source code for future development
+* Made minor code formatting updates
+* Rearranged some of the `devDependencies`
+
+### Documentation
+* Wrote docstring entries for all extension functions
+* Added more ideas for future development to the Readme
+
+## \[3.1.0] (2023-02-19)
+### House Keeping
+* Updated a few dependencies
+* Started project to track work on future features. Feel free to follow along on [GitHub Projects](https://github.com/users/BenRogersWPG/projects/2/views/1)
 
 ## \[3.0.9] (2023-02-04)
 ### Features
