@@ -1,4 +1,15 @@
 # Changelog
+## \[3.1.2] (2023-02-21)
+### Code Cleanup
+* Performed some refactoring to the source code
+* Cleaned up some of the source code
+
+### Documentation
+* Reduced lines used in docstring entries
+
+### House Keeping
+* Updated a few dependencies
+
 ## \[3.1.1] (2023-02-19)
 ### Features
 * Added logic to warn users if they manually set minimap color, but leave transparency level to fully transparent. If this occurs, the color will never apply.
