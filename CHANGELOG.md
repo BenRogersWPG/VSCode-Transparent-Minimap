@@ -1,4 +1,11 @@
 # Changelog
+## \[3.1.3] (2023-02-23)
+### Bug Fixes
+* Fixed a boolean value in the package.json that was defaulted to a string
+
+### House Keeping
+* Updated a few dependencies
+
 ## \[3.1.2] (2023-02-21)
 ### Code Cleanup
 * Performed some refactoring to the source code
