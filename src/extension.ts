@@ -51,7 +51,8 @@ export async function activate(context: vscode.ExtensionContext) {
 
 		//If minimap transparency is asked to be disabled, disable it in the color configurations:
 		if (!enableMinimapTransparency) {
-			removeMinimapTransparency(prevColorConfig);
+			//removeMinimapTransparency(prevColorConfig);
+			manipulateMinimapTransparency(ActionType.Delete, "", prevColorConfig);
 
 			//Display message to user that settings have been reverted
 			if (manual) {
@@ -69,11 +70,10 @@ export async function activate(context: vscode.ExtensionContext) {
 
 			//first, see if the minimap setting has been set yet:
 			const existingMinimapBackground = prevColorConfig['minimap.background'];
-			//console.log(existingMinimapBackground);
 
 			if (existingMinimapBackground === undefined) {
 				//Does not exist, so ADD "minimap.background" setting to the extension settings
-				updateMinimapTransparency("#" + minimapColor + transparencyLevel, prevColorConfig);
+				manipulateMinimapTransparency(ActionType.Update, "#" + minimapColor + transparencyLevel, prevColorConfig);
 			}
 			else {
 				if (existingMinimapBackground === '#' + minimapColor + transparencyLevel) {
@@ -83,19 +83,19 @@ export async function activate(context: vscode.ExtensionContext) {
 					//Does not match, so UPDATE "minimap.background" setting to the extension settings
 					if (configSize < 6) {
 						//Only has minimap, so OVERWRITE "minimap.background" setting to the extension settings
-						writeMinimapTransparency("#" + minimapColor + transparencyLevel);
+						manipulateMinimapTransparency(ActionType.Write, "#" + minimapColor + transparencyLevel);
 					}
 
 					else {
 						//Contains other entries, so UPDATE "minimap.background" setting to the extension settings
-						updateMinimapTransparency("#" + minimapColor + transparencyLevel, prevColorConfig);
+						manipulateMinimapTransparency(ActionType.Update, "#" + minimapColor + transparencyLevel, prevColorConfig);
 					}
 				}
 			}
 		}
 		else {
 			//Does not exist, so write ENTIRE  "workbench.colorCustomizations minimap.background" setting to the extension settings
-			writeMinimapTransparency("#" + minimapColor + transparencyLevel);
+			manipulateMinimapTransparency(ActionType.Write, "#" + minimapColor + transparencyLevel);
 		}
 
 		//Display a message to the user that the settings have been successfully refreshed if manually performed:
@@ -120,75 +120,59 @@ export async function activate(context: vscode.ExtensionContext) {
 	}
 }
 
-/**Function to write minimap transparency to settings.json
- * @param {string} color - Desired hex color of the minimap*/
-async function writeMinimapTransparency(color: string) { //TODO: Consider removing 'export' from function definitions
-	let colorCustomizations = { "minimap.background": color, "scrollbar.shadow": color };
-	//Push the new settings to the Settings JSON:
-	return await vscode.workspace
-		.getConfiguration()
-		.update(
-			'workbench.colorCustomizations',
-			colorCustomizations,
-			ConfigurationTarget.Workspace,
-		);
+//Define an action to perform when running the method manipulateMinimapTransparency():
+enum ActionType {
+	Write,
+	Update,
+	Delete
 }
 
-/**Function to update minimap transparency on settings.json
+interface WorkspaceConfigurationObject {
+	[propName: string]: string;
+}
+
+/**Function to write, update or remove minimap transparency from settings.json
+ * @param {ActionType} action - Action enum to perform (write, update, delete)
  * @param {string} color - Desired hex color of the minimap
- * @param {WorkspaceConfiguration} existingColorCustomizations - Existing colorCustomizations settings to retain*/
-async function updateMinimapTransparency(color: string, existingColorCustomizations: vscode.WorkspaceConfiguration) {
-	interface WorkspaceConfigurationObject {
-		[propName: string]: string;
+ * @param {WorkspaceConfiguration} existingColorCustomizations - Existing colorCustomizations settings to retain (only for update and delete actions) */
+async function manipulateMinimapTransparency(action: ActionType, color: string, existingColorCustomizations?: vscode.WorkspaceConfiguration) {
+	let newColorConfiguration: WorkspaceConfigurationObject = {};
+
+	if (existingColorCustomizations) {
+		Object.entries(existingColorCustomizations).forEach(([key, value], index) => {
+			if (key === "get" || key === "has" || key === "inspect" || key === "update") { }
+			else if (action === ActionType.Delete && (key === "minimap.background" || key === "scrollbar.shadow")) { }
+			else {
+				newColorConfiguration[key] = value;
+			}
+		});
 	}
-	var newColorConfiguration: WorkspaceConfigurationObject = {};
 
-	Object.entries(existingColorCustomizations).forEach(([key, value], index) => {
-		//console.log(key, value, index);
-		if (key === "get" || key === "has" || key === "inspect" || key === "update") { }
-		else {
-			newColorConfiguration[key] = value;
-		}
-	});
-
-	//Add the new minimap color to the list:
-	newColorConfiguration['minimap.background'] = color;
-	newColorConfiguration['scrollbar.shadow'] = color;
-
-	//Update the Settings JSON:
-	return await vscode.workspace
-		.getConfiguration()
-		.update(
-			'workbench.colorCustomizations',
-			newColorConfiguration,
-			ConfigurationTarget.Workspace,
-		);
-}
-
-/**Function to remove minimap transparency from settings.json
- * @param {WorkspaceConfiguration} existingColorCustomizations - Existing colorCustomizations settings to retain*/
-async function removeMinimapTransparency(existingColorCustomizations: vscode.WorkspaceConfiguration) {
-	interface WorkspaceConfigurationObject {
-		[propName: string]: string;
+	if (action === ActionType.Write || action === ActionType.Update) {
+		newColorConfiguration['minimap.background'] = color;
+		newColorConfiguration['scrollbar.shadow'] = color;
 	}
-	var newColorConfiguration: WorkspaceConfigurationObject = {};
 
-	Object.entries(existingColorCustomizations).forEach(([key, value], index) => {
-		//console.log(key, value, index);
-		if (key === "get" || key === "has" || key === "inspect" || key === "update" || key === "minimap.background" || key === "scrollbar.shadow") { }
-		else {
-			newColorConfiguration[key] = value;
-		}
-	});
-	//TODO: Much of this function is similar to updateMinimapTransparency(). Consider refactoring
-	//Update the Settings JSON:
-	return await vscode.workspace
-		.getConfiguration()
-		.update(
-			'workbench.colorCustomizations',
-			newColorConfiguration,
-			ConfigurationTarget.Workspace,
-		);
+	if (action === ActionType.Write) {
+		let colorCustomizations = { "minimap.background": color, "scrollbar.shadow": color };
+		//Push the new settings to the Settings JSON:
+		return await vscode.workspace
+			.getConfiguration()
+			.update(
+				'workbench.colorCustomizations',
+				colorCustomizations,
+				ConfigurationTarget.Workspace,
+			);
+	} else if (action === ActionType.Update || action === ActionType.Delete) {
+		//Update the Settings JSON:
+		return await vscode.workspace
+			.getConfiguration()
+			.update(
+				'workbench.colorCustomizations',
+				newColorConfiguration,
+				ConfigurationTarget.Workspace,
+			);
+	}
 }
 
 // Extension is deactivated
