@@ -1,4 +1,14 @@
 # Changelog
+## \[3.1.5] (2023-03-02)
+### Features
+* Fixed unit test system. Can now start writing unit tests for the extension
+* I hope to code more tests in the near future
+
+### House Keeping
+* Tested on VS Code 1.76 🧪
+* Updated a few dependencies
+* Updated oldest VS Code version support to 1.67.2 and above
+
 ## \[3.1.4] (2023-02-26)
 ### Code Cleanup
 * Performed major refactoring to the source code, combining a few methods and general logic improvements

@@ -110,11 +110,11 @@ export async function activate(context: vscode.ExtensionContext) {
 					}
 				}
 				else {
-					vscode.window.showInformationMessage(`Minimap appearance has been successfully refreshed`);
+					vscode.window.showInformationMessage(`Minimap appearance has been successfully refreshed.`);
 				}
 			}
 			else {
-				vscode.window.showInformationMessage(`Minimap appearance has been successfully refreshed`);
+				vscode.window.showInformationMessage(`Minimap appearance has been successfully refreshed.`);
 			}
 		}
 	}
