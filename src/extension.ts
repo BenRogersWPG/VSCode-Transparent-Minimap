@@ -1,5 +1,5 @@
 // The module 'vscode' contains the VS Code extensibility API. Import the module and reference it with the alias vscode:
-import * as vscode from 'vscode';
+import * as vscode from 'vscode'; //TODO: Review * activation event usage, as notes in 1.76
 import { ConfigurationTarget } from 'vscode';
 
 // this method is called when the extension is activated:

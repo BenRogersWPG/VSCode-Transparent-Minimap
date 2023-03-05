@@ -1,4 +1,16 @@
 # Changelog
+## \[3.2.0] (2023-03-05)
+### Features
+* Wrote many unit tests for the extension functionality to validate extension 🧪
+
+### Code Cleanup
+* Added more ideas for future development to the Readme 💡
+* Cleaned up some new rules in project's launch.json 🧹
+* Added a few to-dos to the source code for future development
+
+### House Keeping
+* Updated a few dependencies
+
 ## \[3.1.5] (2023-03-02)
 ### Features
 * Fixed unit test system. Can now start writing unit tests for the extension
