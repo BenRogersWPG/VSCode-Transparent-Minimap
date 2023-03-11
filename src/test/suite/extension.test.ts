@@ -1,17 +1,44 @@
 import * as assert from 'assert';
+import * as sinon from 'sinon';
 
 // You can import and use all API from the 'vscode' module
 // as well as import your extension to test it
 import * as vscode from 'vscode';
-// import * as myExtension from '../../extension'; //TODO: Try importing the extension this way too
+import * as transparentMinimap from "../../extension";
 
 suite('Extension Test Suite', () => {
 	vscode.window.showInformationMessage('Start all tests.');
 
-	test('Sample test', () => {
+	let sandbox: sinon.SinonSandbox;
+	let showInformationMessageStub: sinon.SinonStub;
+
+	setup(() => {
+		sandbox = sinon.createSandbox();
+		showInformationMessageStub = sandbox.stub(vscode.window, 'showInformationMessage');
+	});
+
+	teardown(() => {
+		sandbox.restore();
+	});
+
+	test('Sample Test', () => {
 		assert.strictEqual([1, 2, 3].indexOf(5), -1);
 		assert.strictEqual([1, 2, 3].indexOf(0), -1);
 		assert.equal("world", "world");
+	});
+
+	test('Message Test', async () => {
+		//Will test the refresh message
+		transparentMinimap.refreshSettings(true);
+		const message = `Minimap appearance has been successfully refreshed.`;
+		sinon.assert.calledOnce(showInformationMessageStub);
+		sinon.assert.calledWithExactly(showInformationMessageStub, message);
+	});
+
+	test('Message Test - non-manual', async () => {
+		//Ensures that the extension does not display an information message when the extension is run by default
+		transparentMinimap.refreshSettings();
+		sinon.assert.notCalled(showInformationMessageStub);
 	});
 
 	test('Minimap Extension Enabled', () => {

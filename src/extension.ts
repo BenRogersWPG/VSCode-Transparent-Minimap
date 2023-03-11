@@ -1,5 +1,5 @@
 // The module 'vscode' contains the VS Code extensibility API. Import the module and reference it with the alias vscode:
-import * as vscode from 'vscode'; //TODO: Review * activation event usage, as notes in 1.76
+import * as vscode from 'vscode';
 import { ConfigurationTarget } from 'vscode';
 
 // this method is called when the extension is activated:
@@ -28,94 +28,94 @@ export async function activate(context: vscode.ExtensionContext) {
 		vscode.commands.executeCommand('workbench.action.openSettings', 'TransparentMinimap.minimapColor');
 		vscode.window.showInformationMessage(`Adjust the minimap color. eg. 000000 no color, 00ff00 is full green`);
 	}));
+}
 
-	/**Function to perform the minimap update without needing to restart VS Code
+/**Function to perform the minimap update without needing to restart VS Code
 	 * @param {boolean} manual - If the refresh is user-initiated via command*/
-	async function refreshSettings(manual: boolean = false) {
-		//Get extension settings and minimap settings from configuration preferences
-		const transparencyLevel: string = vscode.workspace.getConfiguration('TransparentMinimap').get('transparencyLevel')!;
-		const minimapColor: string = vscode.workspace.getConfiguration('TransparentMinimap').get('minimapColor')!;
-		let prevColorConfig: vscode.WorkspaceConfiguration = vscode.workspace.getConfiguration('workbench.colorCustomizations');
-		const configSize = Object.keys(prevColorConfig).length;
-		let minimapConfig: vscode.WorkspaceConfiguration = vscode.workspace.getConfiguration('editor.minimap.enabled');
-		const enableMinimapTransparency: string = vscode.workspace.getConfiguration('TransparentMinimap').get('enableTransparentMinimap')!;
+export async function refreshSettings(manual: boolean = false) {
+	//Get extension settings and minimap settings from configuration preferences
+	const transparencyLevel: string = vscode.workspace.getConfiguration('TransparentMinimap').get('transparencyLevel')!;
+	const minimapColor: string = vscode.workspace.getConfiguration('TransparentMinimap').get('minimapColor')!;
+	let prevColorConfig: vscode.WorkspaceConfiguration = vscode.workspace.getConfiguration('workbench.colorCustomizations');
+	const configSize = Object.keys(prevColorConfig).length;
+	let minimapConfig: vscode.WorkspaceConfiguration = vscode.workspace.getConfiguration('editor.minimap.enabled');
+	const enableMinimapTransparency: string = vscode.workspace.getConfiguration('TransparentMinimap').get('enableTransparentMinimap')!;
 
-		//Warn user if minimap is disabled:
-		if (minimapConfig.get('editor.minimap.enabled') === false && !manual) {
-			const messageResponse = await vscode.window.showWarningMessage(`Minimap is disabled`, 'Enable Minimap');
-			if (messageResponse === "Enable Minimap") {
-				vscode.commands.executeCommand('workbench.action.openSettings', 'editor.minimap.enabled');
-				vscode.window.showInformationMessage(`Check the checkbox to enable the minimap`);
+	//Warn user if minimap is disabled:
+	if (minimapConfig.get('editor.minimap.enabled') === false && !manual) {
+		const messageResponse = await vscode.window.showWarningMessage(`Minimap is disabled`, 'Enable Minimap');
+		if (messageResponse === "Enable Minimap") {
+			vscode.commands.executeCommand('workbench.action.openSettings', 'editor.minimap.enabled');
+			vscode.window.showInformationMessage(`Check the checkbox to enable the minimap`);
+		}
+	}
+
+	//If minimap transparency is asked to be disabled, disable it in the color configurations:
+	if (!enableMinimapTransparency) {
+		//removeMinimapTransparency(prevColorConfig);
+		manipulateMinimapTransparency(ActionType.Delete, "", prevColorConfig);
+
+		//Display message to user that settings have been reverted
+		if (manual) {
+			const messageResponse = await vscode.window.showInformationMessage(`Minimap settings reverted to normal`, 'Enable Minimap Transparency');
+			if (messageResponse === "Enable Minimap Transparency") {
+				vscode.commands.executeCommand('workbench.action.openSettings', 'TransparentMinimap.enableTransparentMinimap');
+				vscode.window.showInformationMessage(`Check the checkbox to enable the minimap transparency`);
 			}
 		}
+		return;
+	}
 
-		//If minimap transparency is asked to be disabled, disable it in the color configurations:
-		if (!enableMinimapTransparency) {
-			//removeMinimapTransparency(prevColorConfig);
-			manipulateMinimapTransparency(ActionType.Delete, "", prevColorConfig);
+	if (configSize > 4) {
+		//ColorCustomization setting already exists, so update "minimap.background" setting to existing extension settings
 
-			//Display message to user that settings have been reverted
-			if (manual) {
-				const messageResponse = await vscode.window.showInformationMessage(`Minimap settings reverted to normal`, 'Enable Minimap Transparency');
-				if (messageResponse === "Enable Minimap Transparency") {
-					vscode.commands.executeCommand('workbench.action.openSettings', 'TransparentMinimap.enableTransparentMinimap');
-					vscode.window.showInformationMessage(`Check the checkbox to enable the minimap transparency`);
-				}
-			}
-			return;
+		//first, see if the minimap setting has been set yet:
+		const existingMinimapBackground = prevColorConfig['minimap.background'];
+
+		if (existingMinimapBackground === undefined) {
+			//Does not exist, so ADD "minimap.background" setting to the extension settings
+			manipulateMinimapTransparency(ActionType.Update, "#" + minimapColor + transparencyLevel, prevColorConfig);
 		}
-
-		if (configSize > 4) {
-			//ColorCustomization setting already exists, so update "minimap.background" setting to existing extension settings
-
-			//first, see if the minimap setting has been set yet:
-			const existingMinimapBackground = prevColorConfig['minimap.background'];
-
-			if (existingMinimapBackground === undefined) {
-				//Does not exist, so ADD "minimap.background" setting to the extension settings
-				manipulateMinimapTransparency(ActionType.Update, "#" + minimapColor + transparencyLevel, prevColorConfig);
+		else {
+			if (existingMinimapBackground === '#' + minimapColor + transparencyLevel) {
+				//Matches. No need to write setting to the extension settings
 			}
 			else {
-				if (existingMinimapBackground === '#' + minimapColor + transparencyLevel) {
-					//Matches. No need to write setting to the extension settings
+				//Does not match, so UPDATE "minimap.background" setting to the extension settings
+				if (configSize < 6) {
+					//Only has minimap, so OVERWRITE "minimap.background" setting to the extension settings
+					manipulateMinimapTransparency(ActionType.Write, "#" + minimapColor + transparencyLevel);
 				}
-				else {
-					//Does not match, so UPDATE "minimap.background" setting to the extension settings
-					if (configSize < 6) {
-						//Only has minimap, so OVERWRITE "minimap.background" setting to the extension settings
-						manipulateMinimapTransparency(ActionType.Write, "#" + minimapColor + transparencyLevel);
-					}
 
-					else {
-						//Contains other entries, so UPDATE "minimap.background" setting to the extension settings
-						manipulateMinimapTransparency(ActionType.Update, "#" + minimapColor + transparencyLevel, prevColorConfig);
-					}
+				else {
+					//Contains other entries, so UPDATE "minimap.background" setting to the extension settings
+					manipulateMinimapTransparency(ActionType.Update, "#" + minimapColor + transparencyLevel, prevColorConfig);
 				}
+			}
+		}
+	}
+	else {
+		//Does not exist, so write ENTIRE  "workbench.colorCustomizations minimap.background" setting to the extension settings
+		manipulateMinimapTransparency(ActionType.Write, "#" + minimapColor + transparencyLevel);
+	}
+
+	//Display a message to the user that the settings have been successfully refreshed if manually performed:
+	if (manual) {
+		//Check if user entered custom minimap color, but left transparency level at 00.Warn user if so with a button to adjust transparency.
+		if (minimapColor !== '000000') {
+			if (transparencyLevel === '00') {
+				const transparencyResponse = await vscode.window.showWarningMessage(`Minimap color has been requested, but transparency set to '00'. You must increase the opacity in order for the color to show`, 'Fix This');
+				if (transparencyResponse === "Fix This") {
+					vscode.commands.executeCommand('workbench.action.openSettings', 'TransparentMinimap.transparencyLevel');
+					vscode.window.showInformationMessage(`Adjust the minimap transparency to something higher than '00'. Try '88'`);
+				}
+			}
+			else {
+				vscode.window.showInformationMessage(`Minimap appearance has been successfully refreshed`);
 			}
 		}
 		else {
-			//Does not exist, so write ENTIRE  "workbench.colorCustomizations minimap.background" setting to the extension settings
-			manipulateMinimapTransparency(ActionType.Write, "#" + minimapColor + transparencyLevel);
-		}
-
-		//Display a message to the user that the settings have been successfully refreshed if manually performed:
-		if (manual) {
-			//Check if user entered custom minimap color, but left transparency level at 00.Warn user if so with a button to adjust transparency.
-			if (minimapColor !== '000000') {
-				if (transparencyLevel === '00') {
-					const transparencyResponse = await vscode.window.showWarningMessage(`Minimap color has been requested, but transparency set to '00'. You must increase the opacity in order for the color to show`, 'Fix This');
-					if (transparencyResponse === "Fix This") {
-						vscode.commands.executeCommand('workbench.action.openSettings', 'TransparentMinimap.transparencyLevel');
-						vscode.window.showInformationMessage(`Adjust the minimap transparency to something higher than '00'. Try '88'`);
-					}
-				}
-				else {
-					vscode.window.showInformationMessage(`Minimap appearance has been successfully refreshed.`);
-				}
-			}
-			else {
-				vscode.window.showInformationMessage(`Minimap appearance has been successfully refreshed.`);
-			}
+			vscode.window.showInformationMessage(`Minimap appearance has been successfully refreshed.`);
 		}
 	}
 }
@@ -135,7 +135,7 @@ interface WorkspaceConfigurationObject {
  * @param {ActionType} action - Action enum to perform (write, update, delete)
  * @param {string} color - Desired hex color of the minimap
  * @param {WorkspaceConfiguration} existingColorCustomizations - Existing colorCustomizations settings to retain (only for update and delete actions) */
-async function manipulateMinimapTransparency(action: ActionType, color: string, existingColorCustomizations?: vscode.WorkspaceConfiguration) {
+export async function manipulateMinimapTransparency(action: ActionType, color: string, existingColorCustomizations?: vscode.WorkspaceConfiguration) {
 	let newColorConfiguration: WorkspaceConfigurationObject = {};
 
 	if (existingColorCustomizations) {

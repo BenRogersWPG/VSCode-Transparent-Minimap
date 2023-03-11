@@ -1,4 +1,14 @@
 # Changelog
+## \[3.2.1] (2023-03-11)
+### Features
+* Wrote more unit tests for the extension functionality to validate extension
+
+### Code Cleanup
+* Performed more refactoring to the source code
+
+### House Keeping
+* Updated a few dependencies
+
 ## \[3.2.0] (2023-03-05)
 ### Features
 * Wrote many unit tests for the extension functionality to validate extension 🧪
