@@ -1,4 +1,14 @@
 # Changelog
+## \[3.2.2] (2023-03-16)
+### Features
+* Wrote more unit tests to validate the extension
+
+### House Keeping
+* Completed review and audit of when clauses in package.json as upcoming changes were noted in VS Code v1.76
+
+### House Keeping
+* Updated a few dependencies
+
 ## \[3.2.1] (2023-03-11)
 ### Features
 * Wrote more unit tests for the extension functionality to validate extension

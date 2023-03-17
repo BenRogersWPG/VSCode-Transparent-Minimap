@@ -41,6 +41,18 @@ suite('Extension Test Suite', () => {
 		sinon.assert.notCalled(showInformationMessageStub);
 	});
 
+	test('Message Test - Update', async () => {
+		//Ensures that the extension does not display an information message when the extension updates the minimap behind-the-scenes
+		enum ActionType {
+			Write,
+			Update,
+			Delete
+		}
+		transparentMinimap.manipulateMinimapTransparency(ActionType.Update, "#FFF00066");
+		transparentMinimap.refreshSettings(false);
+		sinon.assert.notCalled(showInformationMessageStub);
+	});
+
 	test('Minimap Extension Enabled', () => {
 		//Run the extension:
 		vscode.commands.executeCommand('TransparentMinimap.refreshSettings');
