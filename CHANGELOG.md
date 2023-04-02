@@ -1,4 +1,11 @@
 # Changelog
+## \[3.2.3] (2023-04-02)
+### House Keeping
+* Tested on VS Code 1.77 🧪
+
+### House Keeping
+* Updated a few dependencies
+
 ## \[3.2.2] (2023-03-16)
 ### Features
 * Wrote more unit tests to validate the extension
