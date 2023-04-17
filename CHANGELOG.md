@@ -1,9 +1,11 @@
 # Changelog
+## \[3.2.4] (2023-04-16)
+### House Keeping
+* Updated a few dependencies
+
 ## \[3.2.3] (2023-04-02)
 ### House Keeping
 * Tested on VS Code 1.77 🧪
-
-### House Keeping
 * Updated a few dependencies
 
 ## \[3.2.2] (2023-03-16)
@@ -12,8 +14,6 @@
 
 ### House Keeping
 * Completed review and audit of when clauses in package.json as upcoming changes were noted in VS Code v1.76
-
-### House Keeping
 * Updated a few dependencies
 
 ## \[3.2.1] (2023-03-11)
