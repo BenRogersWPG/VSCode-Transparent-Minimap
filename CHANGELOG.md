@@ -1,7 +1,12 @@
 # Changelog
+## \[3.2.9] (2023-08-03)
+### House Keeping
+* Tested on VS Code 1.81 🧪
+* Updated a few dependencies
+
 ## \[3.2.8] (2023-07-20)
 ### Documentation
-Added a third extension badge for Microsoft Visual Studio Marketplace (Issue [#279](https://github.com/BenRogersWPG/VSCode-Transparent-Minimap/issues/279))
+* Added extension badge for rating (⭐⭐⭐⭐⭐) as the extension received its first review on Microsoft Visual Studio Marketplace. 😊*Huge thanks!*😊 (Issue [#279](https://github.com/BenRogersWPG/VSCode-Transparent-Minimap/issues/279))
 
 ### House Keeping
 * Updated a few dependencies
