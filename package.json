@@ -205,7 +205,7 @@
 		"@types/glob": "^8.1.0",
 		"@types/mocha": "^10.0.1",
 		"@types/node": "^20.5.6",
-		"@types/sinon": "^10.0.13",
+		"@types/sinon": "^10.0.16",
 		"@types/vscode": "^1.81.0",
 		"@typescript-eslint/eslint-plugin": "^6.4.0",
 		"@typescript-eslint/parser": "^6.4.1",
