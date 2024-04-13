@@ -1,11 +1,16 @@
 # Changelog
-## \[3.2.15] (2024-02-29)
+## \[3.2.16] (2024-04-12)
 ### House Keeping
-* Tested on VS Code 1.87 🧪
+* Tested on VS Code 1.88 🧪
 * Updated a few dependencies
 
 ### Behind The Scenes
 * Continued working on Issue #383
+
+## \[3.2.15] (2024-02-29)
+### House Keeping
+* Tested on VS Code 1.87 🧪
+* Updated a few dependencies
 
 ## \[3.2.14] (2023-02-06)
 ### House Keeping
