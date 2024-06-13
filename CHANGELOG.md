@@ -1,11 +1,19 @@
 # Changelog
+## \[3.2.18] (2024-06-12)
+### House Keeping
+* Tested on VS Code 1.90 🧪
+* Updated a few dependencies
+
+### Documentation
+* Improved formatting of one section of the readme to be more consistent
+
+### Behind The Scenes
+* Continued working on Issue #383
+
 ## \[3.2.17] (2024-05-04)
 ### House Keeping
 * Tested on VS Code 1.89 🧪
 * Updated a few dependencies
-
-### Behind The Scenes
-* Continued working on Issue #383
 
 ## \[3.2.16] (2024-04-12)
 ### House Keeping

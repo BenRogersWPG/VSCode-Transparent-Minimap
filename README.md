@@ -17,7 +17,7 @@ This extension makes your VS Code minimap transparent. You can adjust the level 
 
 ## How To Use 👇
 
-* I have coded a walkthrough for this extension. It will display when you first install the extension, and will walk you through a quick initial setup to get your minimap as you like it. (access it anytime by running `Get Started: Open Walkthrough` from the Command Palette)*
+*I have coded a walkthrough for this extension. It will display when you first install the extension, and will walk you through a quick initial setup to get your minimap as you like it. (access it anytime by running `Get Started: Open Walkthrough` from the Command Palette)*
 
 ## Extension Settings ⚙️
 
