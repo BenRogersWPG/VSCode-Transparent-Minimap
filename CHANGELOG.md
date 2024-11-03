@@ -7,6 +7,9 @@
 * Tested on VS Code 1.95 🧪
 * Updated a few dependencies
 
+### Documentation
+* Issue #577 was coded by the requestor as a separate extension. I have added it to this project's recommended extensions list, and it can be found at [Tobbyte.mini-glimpse](https://marketplace.visualstudio.com/items?itemName=Tobbyte.mini-glimpse)
+
 ## \[3.2.20] (2024-08-03)
 ### House Keeping
 * Tested on VS Code 1.92 🧪
