@@ -1,4 +1,12 @@
 # Changelog
+## \[3.3.1] (2024-12-12)
+### House Keeping
+* Tested on VS Code 1.96 🧪
+* Updated a few dependencies
+
+### Behind The Scenes
+* Continued working on Issue #383
+
 ## \[3.3.0] (2024-11-03)
 ### Features
 * Updated the minimum required version of Visual Studio Code to 1.74.3. Users on older versions (below 1.74.3) will need to update VS Code to continue using this extension. This change was made to leverage new features and improvements introduced in recent versions.
