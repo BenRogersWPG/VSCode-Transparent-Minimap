@@ -4,16 +4,16 @@
 * Updated the minimum required version of Visual Studio Code to 1.89.1. Users on older versions (below 1.89.1) will need to update VS Code to continue using this extension. This change was made to leverage new features and improvements introduced in recent versions.
 
 ### House Keeping
-* Tested on VS Code 1.9x 🧪
+* Tested on VS Code 1.97 🧪
 * Updated a few dependencies
+
+### Behind The Scenes
+* Continued working on Issue #383
 
 ## \[3.3.1] (2024-12-12)
 ### House Keeping
 * Tested on VS Code 1.96 🧪
 * Updated a few dependencies
-
-### Behind The Scenes
-* Continued working on Issue #383
 
 ## \[3.3.0] (2024-11-03)
 ### Features
@@ -32,7 +32,6 @@
 * Updated a few dependencies
 
 ### Behind The Scenes
-* Continued working on Issue #383
 * Starting work on Issue #577
 
 ## \[3.2.19] (2024-07-04)
