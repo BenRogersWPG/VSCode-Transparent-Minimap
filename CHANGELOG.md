@@ -1,12 +1,17 @@
 # Changelog
+## \[3.4.5] (2025-07-12)
+### House Keeping
+* Tested on VS Code 1.102 🧪
+* Updated a few dependencies
+
+### Behind The Scenes
+* Continued working on Issue #383
+
 ## \[3.4.4] (2025-06-15)
 ### House Keeping
 * Tested on VS Code 1.101 🧪
 * Updated a few dependencies
 
-### Behind The Scenes
-* Continued working on Issue #383
-*
 ## \[3.4.3] (2025-05-09)
 ### House Keeping
 * Tested on VS Code 1.100 🧪
