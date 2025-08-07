@@ -1,11 +1,19 @@
 # Changelog
-## \[3.4.5] (2025-07-12)
+## \[3.5.0] (2025-08-07)
+### Features
+* Updated the minimum required version of Visual Studio Code to 1.100.2. Users on older versions (below 1.100.2) will need to update VS Code to continue using this extension. This change was made to leverage new features and improvements introduced in recent versions.
+
 ### House Keeping
-* Tested on VS Code 1.102 🧪
+* Tested on VS Code 1.103 🧪
 * Updated a few dependencies
 
 ### Behind The Scenes
 * Continued working on Issue #383
+
+## \[3.4.5] (2025-07-12)
+### House Keeping
+* Tested on VS Code 1.102 🧪
+* Updated a few dependencies
 
 ## \[3.4.4] (2025-06-15)
 ### House Keeping
