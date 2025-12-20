@@ -215,7 +215,7 @@
 		"mocha": "^11.7.5",
 		"path-browserify": "^1.0.1",
 		"process": "^0.11.10",
-		"sinon": "^21.0.0",
+		"sinon": "^21.0.1",
 		"ts-loader": "^9.5.4",
 		"typescript": "^5.9.3",
 		"util": "^0.12.5",
