@@ -90,3 +90,17 @@ I spend a lot of time maintaining and enhancing this extension. If you'd like to
 ## Release Notes 🆕
 
 See [CHANGELOG](https://github.com/BenRogersWPG/VSCode-Transparent-Minimap/blob/master/CHANGELOG.md) file.
+
+## Software Details 💿
+
+* **Author:** Ben Rogers
+* **Date Published:** 9/30/2022, 11:25:56 AM
+* **Publisher:** Ben Rogers
+* **Software Version:** 3.6.3
+* **Last Updated:** 4/20/2026, 3:40:00 PM
+* **Average Rating:** 4.0
+* **Rating Count:** 2
+* **Category:** DeveloperApplication
+* **Unique Identifier:** BenRogersWPG.transparent-minimap
+* **Install URL:** [https://marketplace.visualstudio.com/items?itemName=BenRogersWPG.transparent-minimap](https://marketplace.visualstudio.com/items?itemName=BenRogersWPG.transparent-minimap)
+* **Project URL:** [https://github.com/BenRogersWPG/VSCode-Transparent-Minimap](https://github.com/BenRogersWPG/VSCode-Transparent-Minimap)
