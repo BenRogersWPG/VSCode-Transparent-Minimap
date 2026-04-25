@@ -216,7 +216,7 @@
 		"path-browserify": "^1.0.1",
 		"process": "^0.11.10",
 		"sinon": "^21.0.3",
-		"ts-loader": "^9.5.4",
+		"ts-loader": "^9.5.7",
 		"typescript": "^5.9.3",
 		"util": "^0.12.5",
 		"webpack": "^5.105.4",
