@@ -96,11 +96,15 @@ See [CHANGELOG](https://github.com/BenRogersWPG/VSCode-Transparent-Minimap/blob/
 * **Author:** Ben Rogers
 * **Date Published:** 9/30/2022, 11:25:56 AM
 * **Publisher:** Ben Rogers
-* **Software Version:** 3.6.3
-* **Last Updated:** 4/20/2026, 3:40:00 PM
+* **Software Version:** 3.6.4
+* **Last Updated:** 4/25/2026, 9:11:00 AM
 * **Average Rating:** 4.0
 * **Rating Count:** 2
 * **Category:** DeveloperApplication
 * **Unique Identifier:** BenRogersWPG.transparent-minimap
 * **Install URL:** [https://marketplace.visualstudio.com/items?itemName=BenRogersWPG.transparent-minimap](https://marketplace.visualstudio.com/items?itemName=BenRogersWPG.transparent-minimap)
 * **Project URL:** [https://github.com/BenRogersWPG/VSCode-Transparent-Minimap](https://github.com/BenRogersWPG/VSCode-Transparent-Minimap)
+
+* [![marketplace rating](https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FBenRogersWPG%2FVSCode-Transparent-Minimap%2Fmaster%2FREADME.md&search=Average%20Rating%3A%5C*%5C*%20(%5B%5Cd.%5D%2B)&replace=%241&label=Marketplace%20rating)](https://marketplace.visualstudio.com/items?itemName=BenRogersWPG.transparent-minimap&ssr=false#review-details)
+
+* [![code checks](https://img.shields.io/github/check-runs/BenRogersWPG/VSCode-Transparent-Minimap/master)](https://github.com/BenRogersWPG/VSCode-Transparent-Minimap)
