@@ -76,6 +76,7 @@ Enable the extension to change the minimap to be transparent.
 ## Requirements 📦
 
 - Visual Studio Code / Visual Studio Code for the Web running on any operating system
+- Will work with Visual Studio Code 1.118.0 or later (more recent)
 
 ## Known Issues 🐛
 
@@ -96,8 +97,8 @@ See [CHANGELOG](https://github.com/BenRogersWPG/VSCode-Transparent-Minimap/blob/
 * **Author:** Ben Rogers
 * **Date Published:** 9/30/2022, 11:25:56 AM
 * **Publisher:** Ben Rogers
-* **Software Version:** 3.6.4
-* **Last Updated:** 4/25/2026, 9:11:00 AM
+* **Software Version:** 3.6.5
+* **Last Updated:** 5/10/2026, 9:23:00 AM
 * **Average Rating:** 4.0
 * **Rating Count:** 2
 * **Category:** DeveloperApplication
