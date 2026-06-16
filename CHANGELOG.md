@@ -1,4 +1,12 @@
 # Changelog
+## \[3.6.7] (2026-06-16)
+### House Keeping
+* Tested on VS Code 1.124 🧪
+* Updated a few dependencies
+
+### Behind The Scenes
+* Continued working on Issue #383
+
 ## \[3.6.6] (2026-05-30)
 ### Features
 * Updated the minimum required version of Visual Studio Code to 1.120.0. Users on older versions (below 1.120.0) will need to update VS Code to continue using this extension. This change was made to leverage new features and improvements introduced in recent versions.
@@ -6,9 +14,6 @@
 ### House Keeping
 * Tested on VS Code 1.122 🧪
 * Updated a few dependencies
-
-### Behind The Scenes
-* Continued working on Issue #383
 
 ## \[3.6.5] (2026-05-10)
 ### Features
