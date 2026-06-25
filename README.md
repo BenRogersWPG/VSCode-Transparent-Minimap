@@ -97,8 +97,8 @@ See [CHANGELOG](https://github.com/BenRogersWPG/VSCode-Transparent-Minimap/blob/
 * **Author:** Ben Rogers
 * **Date Published:** 9/30/2022, 11:25:56 AM
 * **Publisher:** Ben Rogers
-* **Software Version:** 3.6.7
-* **Last Updated:** 6/16/2026, 7:19:00 AM
+* **Software Version:** 3.6.8
+* **Last Updated:** 6/25/2026, 6:55:00 AM
 * **Average Rating:** 4.0
 * **Rating Count:** 2
 * **Category:** DeveloperApplication
