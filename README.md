@@ -97,8 +97,8 @@ See [CHANGELOG](https://github.com/BenRogersWPG/VSCode-Transparent-Minimap/blob/
 * **Author:** Ben Rogers
 * **Date Published:** 9/30/2022, 11:25:56 AM
 * **Publisher:** Ben Rogers
-* **Software Version:** 3.6.11
-* **Last Updated:** 9/05/2026, 10:28:00 AM
+* **Software Version:** 3.6.12
+* **Last Updated:** 9/24/2026, 7:01:00 PM
 * **Average Rating:** 4.0
 * **Rating Count:** 2
 * **Category:** DeveloperApplication
@@ -136,7 +136,7 @@ See [CHANGELOG](https://github.com/BenRogersWPG/VSCode-Transparent-Minimap/blob/
   "operatingSystem": "Visual Studio Code",
   "requirements": "1.120.0 or later",
   "screenshot": "https://benrogerswpg.github.io/VSCode-Transparent-Minimap/images/Transparent-Minimap.gif",
-  "softwareVersion": "3.6.10",
+  "softwareVersion": "3.6.12",
   "aggregateRating": {
     "@type": "AggregateRating",
     "ratingValue": "4.0",
