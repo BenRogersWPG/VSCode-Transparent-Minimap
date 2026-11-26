@@ -4,6 +4,7 @@
 	"recommendations": [
 		"dbaeumer.vscode-eslint",
 		"BenRogersWPG.websearchengine",
+		"BenRogersWPG.bible-verse-statusbar",
 		"Tobbyte.mini-glimpse"
 	]
 }
